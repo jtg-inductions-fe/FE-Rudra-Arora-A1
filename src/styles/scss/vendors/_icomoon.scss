@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../../assets/icomoon/icomoon.eot?wl83df');
+    src:
+        url('../../assets/icomoon/icomoon.eot?wl83df#iefix')
+            format('embedded-opentype'),
+        url('../../assets/icomoon/icomoon.woff2?wl83df') format('woff2'),
+        url('../../assets/icomoon/icomoon.ttf?wl83df') format('truetype'),
+        url('../../assets/icomoon/icomoon.woff?wl83df') format('woff'),
+        url('../../assets/icomoon/icomoon.svg?wl83df#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-locationpin .path1:before {
+    content: '\e900';
+    color: rgb(255, 87, 34);
+}
+.icon-locationpin .path2:before {
+    content: '\e901';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+.icon-calendar .path1:before {
+    content: '\e904';
+    color: rgb(250, 205, 73);
+}
+.icon-calendar .path2:before {
+    content: '\e905';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+.icon-coupon .path1:before {
+    content: '\e906';
+    color: rgb(248, 94, 159);
+}
+.icon-coupon .path2:before {
+    content: '\e907';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+.icon-ham-menu:before {
+    content: '\e908';
+    color: currentColor;
+}
+.icon-play-circle:before {
+    content: '\e909';
+    color: currentColor;
+}
+.icon-work-bag:before {
+    content: '\e90a';
+    color: currentColor;
+}
+.icon-mail-icon:before {
+    content: '\e90c';
+}
+.icon-fb-logo:before {
+    content: '\e90d';
+    color: currentColor;
+}
+.icon-insta-logo .path1:before {
+    content: '\e90e';
+    color: rgb(93, 80, 198);
+}
+.icon-insta-logo .path2:before {
+    content: '\e90f';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+.icon-twt-logo .path1:before {
+    content: '\e902';
+    color: rgb(93, 80, 198);
+}
+.icon-twt-logo .path2:before {
+    content: '\e903';
+    margin-left: -1em;
+    color: rgb(241, 242, 242);
+}
+.icon-cross:before {
+    content: '\ea0f';
+}

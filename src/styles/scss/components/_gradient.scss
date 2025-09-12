@@ -1,0 +1,36 @@
+@use '../abstracts/variables';
+
+.gradient {
+    position: relative;
+    width: 100%;
+
+    &::before {
+        content: '';
+        overflow-x: hidden;
+        position: absolute;
+        pointer-events: none;
+        background: radial-gradient(
+            circle,
+            variables.$background-accent-1 30%,
+            variables.$background-color-white 70%
+        );
+        border-radius: 50%;
+        width: 80vw;
+        height: 80vw;
+        z-index: -200;
+
+        top: -20vw;
+        left: -20vw;
+        @media (width >= 1024px) {
+            top: -35vw;
+            left: -30vw;
+        }
+
+        @media (width >= 1440px) {
+            width: 60vw;
+            height: 60vw;
+            top: -20vw;
+            left: -20vw;
+        }
+    }
+}
