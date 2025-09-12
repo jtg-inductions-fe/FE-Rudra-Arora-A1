@@ -1,0 +1,279 @@
+@use '../components/buttons';
+@use '../abstracts/variables';
+@use '../components/gradient';
+@use '../abstracts/mixins';
+
+.nav-parent {
+    box-shadow: 0 1px 6px gray;
+    min-height: 113px;
+    background: variables.$background-color-white;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+
+    &__desktopmenu {
+        display: none;
+    }
+
+    &__menu {
+        position: fixed;
+        margin-top: 0;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+        background-color: #ffd9cd;
+        padding-top: 144px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    &__links-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+
+    &__link {
+        width: 100vw;
+        text-align: center;
+        padding: 16px;
+        transition: background-color 0.5s ease-in-out;
+
+        &:hover {
+            background-color: variables.$background-color-white;
+        }
+
+        & > a {
+            text-decoration: none;
+            color: variables.$text-color-1;
+            font-weight: 700;
+
+            &:hover {
+                color: variables.$text-black;
+            }
+        }
+    }
+
+    &__button-group {
+        position: fixed;
+        top: 33rem;
+        right: 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        background-color: variables.$background-transparent;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    &__desktop-tabletbutton-group {
+        display: none;
+    }
+
+    &__menuIcons {
+        height: 45px;
+        z-index: 2;
+
+        &--openMenu {
+            font-size: 41px;
+            color: variables.$primary-color;
+            cursor: pointer;
+            &:focus-visible {
+                outline: 2px solid variables.$black;
+                outline-offset: 2px;
+            }
+        }
+
+        &--crossMenu {
+            font-size: 41px;
+            color: variables.$primary-color;
+            cursor: pointer;
+            &:focus-visible {
+                outline: 2px solid variables.$black;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    &__mainLogo {
+        z-index: 5;
+
+        &:focus-visible {
+            outline: 2px solid variables.$black;
+            outline-offset: 2px;
+        }
+    }
+
+    &__signupButton {
+        padding: 16px;
+        width: 7rem;
+
+        &:hover {
+            transform: scale(110%);
+        }
+    }
+
+    &__loginButton {
+        padding: 16px;
+        width: 7rem;
+
+        &:hover {
+            transform: scale(110%);
+        }
+    }
+}
+
+@include mixins.media-up('md') {
+    .navbar {
+        position: sticky;
+        justify-content: space-between;
+
+        &__button-group {
+            display: none;
+        }
+
+        &__menuIcons {
+            margin: 0;
+        }
+
+        &__mainLogo {
+            position: fixed;
+            left: 48%;
+            margin: 0;
+            order: 2;
+        }
+
+        &__menu {
+            padding-top: 240px;
+        }
+
+        &__links-list {
+            gap: 48px;
+        }
+
+        &__desktop-tabletbutton-group {
+            display: block;
+            position: static;
+            width: auto;
+            flex-direction: row;
+            background-color: variables.$background-transparent;
+            order: 3;
+            transform: none;
+            transition: none;
+            padding: 0;
+            margin: 0;
+            gap: 0;
+            opacity: 1;
+            z-index: 4;
+        }
+
+        &__desktop-tabletsignupButton {
+            width: 7rem;
+            padding: 17.6px;
+            &:hover {
+                transform: none;
+            }
+        }
+        &__desktop-tabletloginButton {
+            width: 7rem;
+            padding: 17.6px;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+}
+
+@include mixins.media-up('lg') {
+    .nav-parent {
+        min-height: 111.85px;
+    }
+    .navbar {
+        position: sticky;
+        top: 0;
+        justify-content: space-between;
+
+        &__menu {
+            display: none;
+        }
+
+        &__desktopmenu {
+            display: block;
+            position: static;
+            height: auto;
+            width: auto;
+            padding: 0;
+            order: 3;
+            transform: none;
+            background: variables.$background-transparent;
+            opacity: 1;
+            transition: none;
+        }
+
+        &__desktoplinks-list {
+            display: flex;
+            flex-direction: row;
+            gap: 58px;
+            list-style-type: none;
+            font-weight: 700;
+        }
+
+        &__desktoplink {
+            width: auto;
+
+            & > a {
+                color: variables.$text-color-1;
+                text-decoration: none;
+
+                &:hover {
+                    color: variables.$text-black;
+                }
+            }
+        }
+
+        &__menuIcons {
+            display: none;
+        }
+
+        &__mainLogo {
+            position: static;
+            margin: 0;
+        }
+
+        &__button-group {
+            margin: 0;
+            width: auto;
+            background-color: variables.$background-transparent;
+            gap: 0;
+            z-index: 4;
+        }
+    }
+}

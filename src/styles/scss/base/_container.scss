@@ -1,0 +1,19 @@
+@use '../abstracts/mixins';
+
+.container {
+    margin: auto;
+    max-width: 396.29px;
+}
+
+@include mixins.media-up('md') {
+    .container {
+        max-width: 896px;
+    }
+}
+
+@include mixins.media-up('lg') {
+    .container {
+        margin: auto;
+        max-width: 1192px;
+    }
+}

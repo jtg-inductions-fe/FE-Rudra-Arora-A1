@@ -1,0 +1,24 @@
+@use '../abstracts/variables';
+@use '../abstracts/fonts';
+
+.button {
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+
+    &--secondary {
+        background-color: variables.$background-color-white;
+    }
+
+    &--primary {
+        background-color: variables.$primary-color;
+        color: variables.$text-color-2;
+    }
+}
+
+.buttonReset {
+    background: variables.$background-transparent;
+    border: none;
+}
