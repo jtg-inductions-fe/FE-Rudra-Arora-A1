@@ -7,11 +7,16 @@ body {
     font-weight: 400;
 }
 
+h2 {
+    font-weight: 700;
+}
+
 .preset-1 {
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
+    color: variables.$secondary-color;
 
     @include mixins.media-up('md') {
         font-size: 1.43rem;

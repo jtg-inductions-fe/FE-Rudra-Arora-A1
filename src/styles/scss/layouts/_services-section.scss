@@ -1,0 +1,101 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins' as *;
+@use '../components/card';
+
+.services-section {
+    @include flex-layout(column);
+    gap: 25.6px;
+    padding-top: 64px;
+
+    &__content {
+        @include flex-layout(column);
+        gap: 16px;
+        text-align: center;
+
+        & > h4 {
+            letter-spacing: 3.2px;
+        }
+
+        & > h1 {
+            line-height: 2.5rem;
+        }
+    }
+
+    &__cards {
+        @include flex-layout(column);
+        gap: 17.6px;
+    }
+
+    // &__card {
+    //     @include flex-layout(column, flex-start, center);
+    //     gap: 28.8px;
+    //     padding: 35.2px 16px;
+    //     border-radius: 30px;
+    //     box-shadow: 1px 1px 7px 2px variables.$shadow-color;
+
+    //     & > p {
+    //         text-align: center;
+    //         padding: 0 12.8px;
+    //         font-size: 1.2rem;
+    //         color: variables.$text-color-1;
+    //     }
+
+    //     & > h2 {
+    //         font-size: 1.5rem;
+    //     }
+
+    //     &:hover{
+    //         transform: scale(1.05);
+    //     }
+    // }
+}
+
+@include media-up('md') {
+    .services-section {
+        margin-top: 58px;
+        align-items: center;
+        gap: 76.8px;
+
+        &__content {
+            & > h1 {
+                font-size: 2.5rem;
+                word-spacing: 5px;
+            }
+
+            & > h4 {
+                letter-spacing: 4.8px;
+                font-size: 1.5rem;
+            }
+        }
+
+        &__cards {
+            flex-direction: row;
+        }
+    }
+}
+
+@include media-up('lg') {
+    .services-section {
+        flex-direction: row;
+        margin-top: 72px;
+        gap: 0rem;
+
+        &__content {
+            width: 33.5%;
+            text-align: start;
+            gap: 0;
+            line-height: 2.5rem;
+
+            & > h1 {
+                font-size: 2.8rem;
+                line-height: 4rem;
+            }
+        }
+
+        &__cards {
+            width: 66.4%;
+            height: 431px;
+            gap: 27.2px;
+        }
+    }
+}
