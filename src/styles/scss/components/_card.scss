@@ -69,3 +69,56 @@
         }
     }
 }
+
+.travel-point-section__cards-container {
+    width: 100%;
+    @include flex-layout(column);
+    padding-top: 25px;
+    gap: 15px;
+}
+
+.travel-point-section__card {
+    height: 151px;
+    box-shadow: 1px 1px 3px 2px variables.$shadow-color;
+    border-radius: 33px;
+    @include flex-layout(column, center, stretch);
+    gap: 20px;
+
+    & > h4 {
+        color: variables.$tertiary-color;
+        font-weight: bold;
+        font-size: 2.18rem;
+    }
+
+    & > p {
+        font-size: 1.12rem;
+    }
+}
+
+@include media-up('md') {
+    .travel-point-section__cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 832px;
+        gap: 30px;
+        padding-top: 44px;
+    }
+
+    .travel-point-section__card {
+        width: 400px;
+    }
+}
+
+@include media-up('lg') {
+    .travel-point-section__cards-container {
+        width: 450px;
+        gap: 30px;
+        padding-top: 47px;
+        z-index: -1;
+    }
+
+    .travel-point-section__card {
+        text-align: center;
+        width: 209.29px;
+    }
+}

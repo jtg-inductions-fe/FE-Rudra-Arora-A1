@@ -17,8 +17,10 @@ h2 {
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
     color: variables.$secondary-color;
+    letter-spacing: 3.2px;
 
     @include mixins.media-up('md') {
+        letter-spacing: 5.2px;
         font-size: 1.43rem;
         letter-spacing: 0.3rem;
         line-height: 1.7rem;

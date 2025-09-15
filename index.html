@@ -285,6 +285,50 @@
                     </button>
                 </div>
             </section>
+
+            <div class="travel-point-container">
+                <section class="container travel-point-section">
+                    <div class="travel-point-section__main-img">
+                        <picture>
+                            <source
+                                media="(width >= 1024px)"
+                                srcset="
+                                    ./src/assets/images/travelPointTablet.png
+                                "
+                                class="travel-point-section__tablet-desktop-image"
+                            />
+                            <img
+                                src="./src/assets/images/travelPoint-mobile.png"
+                                alt=""
+                            />
+                        </picture>
+                    </div>
+
+                    <div class="travel-point-section__content">
+                        <h4 class="preset-1">TRAVEL POINT</h4>
+                        <h2 class="subHeading">
+                            We helping you find your dream location
+                        </h2>
+                        <p class="para">
+                            Contrary to popular belief, Lorem Ipsum is not
+                            simply random text. It has roots in a piece of
+                            classical Latin literature from 45 BC.
+                        </p>
+
+                        <div
+                            class="travel-point-section__cards-container"
+                            id="travel-point-section-cards-container"
+                        ></div>
+                    </div>
+                </section>
+
+                <div class="travel-point-section-object">
+                    <img
+                        src="./src/assets/images/travelpoint-object.png"
+                        alt="travelPoint Object"
+                    />
+                </div>
+            </div>
         </header>
 
         <script type="module" src="./src/script/index.js"></script>
