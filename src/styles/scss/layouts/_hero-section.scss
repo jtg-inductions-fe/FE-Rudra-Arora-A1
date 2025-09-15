@@ -91,7 +91,7 @@
 @include media-up('md') {
     .hero-section {
         gap: 50px;
-        align-items: center;
+        @include flex-layout(column, flex-start, center);
         margin-top: 32px;
 
         &__image {
@@ -119,8 +119,7 @@
         }
 
         &__button-grp {
-            flex-direction: row;
-            justify-content: center;
+            @include flex-layout(row, center, stretch);
 
             padding-top: 0;
             gap: 24px;
@@ -155,15 +154,14 @@
 
 @include media-up('lg') {
     .hero-section {
-        flex-direction: row-reverse;
-        align-items: center;
+        @include flex-layout(row-reverse, flex-start, center);
 
         gap: 16px;
 
         &__content {
             margin: 0;
-            align-items: flex-start;
-            justify-content: flex-start;
+            @include flex-layout(column, flex-start, flex-start);
+
             gap: 38px;
             height: 713px;
             padding-top: 60px;
@@ -188,7 +186,7 @@
         }
 
         &__button-grp {
-            justify-content: flex-start;
+            @include flex-layout(row, flex-start, stretch);
             margin-top: 30px;
         }
 
@@ -196,7 +194,7 @@
             padding: 0;
             order: 3;
             margin-top: 112px;
-            justify-content: space-between;
+            @include flex-layout(row, space-between, stretch);
             gap: 80px;
         }
 
