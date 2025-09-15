@@ -1,5 +1,6 @@
 @use '../abstracts/variables';
 @use '../abstracts/fonts';
+@use '../abstracts/mixins' as *;
 
 .button {
     border: none;
@@ -7,8 +8,25 @@
     text-align: center;
     cursor: pointer;
     font-weight: 700;
+    font-size: 0.87rem;
+    line-height: 1.05rem;
+    background-color: white;
 
-    &--secondary {
+    &--icon-center {
+        @include flex-center();
+    }
+
+    &--icon-primary {
+        color: variables.$primary-color;
+        font-size: 1.5rem;
+    }
+
+    &--icon-secondary {
+        color: variables.$secondary-color;
+        font-size: 1.5rem;
+    }
+
+    &--text {
         background-color: variables.$background-color-white;
     }
 

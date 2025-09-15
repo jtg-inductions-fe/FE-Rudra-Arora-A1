@@ -1,0 +1,208 @@
+@use '../components/gradient';
+@use '../abstracts/variables';
+@use '../components/buttons';
+@use '../abstracts/mixins' as *;
+
+.hero-section {
+    @include flex-layout(column);
+    padding-top: 35.2px;
+    gap: 32px;
+
+    &__image {
+        height: 364.8px;
+    }
+
+    &__content {
+        @include flex-layout(column, flex-start, center);
+        gap: 16px;
+        text-align: center;
+
+        & > p {
+            padding: 0 16px;
+        }
+    }
+
+    &__button {
+        gap: 16px;
+        color: variables.$secondary-color;
+        padding: 18.4px 35.2px;
+        box-shadow: 1px 1px 3px 2px variables.$shadow-color;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__heading {
+        padding: 0 16px 8px 16px;
+
+        & > span {
+            color: variables.$secondary-color;
+        }
+    }
+
+    &__button-grp {
+        width: 100%;
+        @include flex-layout(column);
+        gap: 28.8px;
+        padding-top: 19.2px;
+
+        &--get-started {
+            padding: 24px 0;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        &--watch-demo {
+            padding: 19.84px 0;
+            gap: 11.2px;
+            box-shadow: 1px 1px 3px 2px variables.$shadow-color;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__logos {
+        flex-wrap: wrap;
+        @include flex-layout(row, center, stretch);
+        gap: 32px;
+        margin-top: 67.2px;
+        padding-right: 16px;
+    }
+
+    &__partner-logo {
+        width: auto;
+        height: 19.2px;
+
+        & > img {
+            height: 100%;
+        }
+    }
+
+    &__icon {
+        display: none;
+    }
+}
+
+@include media-up('md') {
+    .hero-section {
+        gap: 50px;
+        align-items: center;
+        margin-top: 32px;
+
+        &__image {
+            height: 718.4px;
+        }
+
+        &__content {
+            gap: 40px;
+
+            & > p {
+                padding: 0 240px;
+            }
+        }
+
+        &__button {
+            font-size: 0.9rem;
+            gap: 12.8px;
+            margin-top: 5px;
+        }
+
+        &__heading {
+            margin-right: 16px;
+            padding: 0 144px;
+            word-spacing: 6.4px;
+        }
+
+        &__button-grp {
+            flex-direction: row;
+            justify-content: center;
+
+            padding-top: 0;
+            gap: 24px;
+
+            &--get-started {
+                padding: 8px 32px;
+            }
+
+            &--watch-demo {
+                padding: 16px 27.2px;
+            }
+        }
+
+        &__logos {
+            gap: 32px;
+            margin-top: 160px;
+            padding: 0 128px;
+        }
+
+        &__partner-logo {
+            height: 32px;
+        }
+
+        &__icon {
+            display: block;
+            position: absolute;
+            top: 1268.48px;
+            left: 36.8px;
+        }
+    }
+}
+
+@include media-up('lg') {
+    .hero-section {
+        flex-direction: row-reverse;
+        align-items: center;
+
+        gap: 16px;
+
+        &__content {
+            margin: 0;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 38px;
+            height: 713px;
+            padding-top: 60px;
+
+            & > h1 {
+                text-align: start;
+                padding: 0;
+                margin: 0;
+            }
+
+            & > p {
+                padding: 0;
+                padding-top: 20px;
+                text-align: start;
+            }
+
+            & > button {
+                padding: 18.4px 30.4px;
+                gap: 8px;
+                background: variables.$background-transparent;
+            }
+        }
+
+        &__button-grp {
+            justify-content: flex-start;
+            margin-top: 30px;
+        }
+
+        &__logos {
+            padding: 0;
+            order: 3;
+            margin-top: 112px;
+            justify-content: space-between;
+            gap: 80px;
+        }
+
+        &__icon {
+            top: 832px;
+            left: 32px;
+        }
+    }
+}

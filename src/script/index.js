@@ -5,6 +5,8 @@ const hamburger = document.getElementById('hamburger');
 const cross = document.getElementById('cross');
 const navButton = document.getElementById('navButton');
 
+menu.style.display = 'none';
+
 const setOpen = (open) => {
     if (!menu || !hamburger || !cross || !navButton)
         throw new Error('HTML content not loaded');
@@ -14,5 +16,11 @@ const setOpen = (open) => {
     cross.toggleAttribute('hidden', !open);
 };
 
-hamburger.addEventListener('click', () => setOpen(true));
-cross.addEventListener('click', () => setOpen(false));
+hamburger.addEventListener('click', () => {
+    setOpen(true);
+    menu.style.display = 'block';
+});
+cross.addEventListener('click', () => {
+    setOpen(false);
+    setTimeout(() => (menu.style.display = 'none'), 500);
+});
