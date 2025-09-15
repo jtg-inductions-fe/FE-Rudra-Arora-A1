@@ -1,0 +1,128 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins' as *;
+
+.services-section__card {
+    @include flex-layout(column, flex-start, center);
+    gap: 28px;
+    padding: 34px 16px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 7px 2px variables.$shadow-color;
+
+    &__description {
+        text-align: center;
+        padding: 4px 12.8px 0 12.8px;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        color: variables.$text-color-1;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@include media-up('md') {
+    .services-section__card {
+        flex: 1;
+
+        & > div {
+            margin-top: 22px;
+            margin-bottom: 32px;
+        }
+
+        &__description {
+            padding: 0 48px;
+            line-height: 1.7rem;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+            padding: 7px 40px;
+            text-align: center;
+        }
+    }
+}
+
+@include media-up('lg') {
+    .services-section__card {
+        padding: 0;
+        padding-top: 40px;
+        gap: 24px;
+
+        &__description {
+            padding: 11.2px 56px 0 59.2px;
+            line-height: 1.5rem;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+            padding: 0;
+            text-align: center;
+        }
+
+        &:last-child {
+            display: none;
+        }
+    }
+}
+
+.travel-point-section__cards-container {
+    width: 100%;
+    @include flex-layout(column);
+    padding-top: 15px;
+    gap: 15px;
+}
+
+.travel-point-section__card {
+    height: 151px;
+    box-shadow: 1px 1px 3px 2px variables.$shadow-color;
+    border-radius: 33px;
+    @include flex-layout(column, center, stretch);
+    gap: 20px;
+
+    & > h4 {
+        color: variables.$tertiary-color;
+        font-weight: bold;
+        font-size: 2.18rem;
+    }
+
+    & > p {
+        font-size: 1.12rem;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@include media-up('md') {
+    .travel-point-section__cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 832px;
+        gap: 30px;
+        padding-top: 57px;
+    }
+
+    .travel-point-section__card {
+        width: 400px;
+    }
+}
+
+@include media-up('lg') {
+    .travel-point-section__cards-container {
+        width: 450px;
+        gap: 30px;
+        padding-top: 47px;
+        z-index: -1;
+    }
+
+    .travel-point-section__card {
+        text-align: center;
+        width: 209.29px;
+    }
+}

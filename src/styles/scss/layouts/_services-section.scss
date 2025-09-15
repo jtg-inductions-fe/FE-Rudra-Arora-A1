@@ -1,0 +1,58 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins' as *;
+@use '../components/card';
+
+.services-section {
+    @include flex-layout(column);
+    gap: 25.6px;
+    padding-top: 61px;
+
+    &__content {
+        @include flex-layout(column);
+        gap: 16px;
+        text-align: center;
+    }
+
+    &__cards {
+        @include flex-layout(column);
+        gap: 17.6px;
+    }
+}
+
+@include media-up('md') {
+    .services-section {
+        margin-top: 72px;
+        @include flex-layout(column, flex-start, center);
+        gap: 76.8px;
+
+        &__content {
+            & > h1 {
+                word-spacing: 5px;
+            }
+        }
+
+        &__cards {
+            flex-direction: row;
+        }
+    }
+}
+
+@include media-up('lg') {
+    .services-section {
+        @include flex-layout(row, flex-start, center);
+        margin-top: 68px;
+        gap: 0;
+
+        &__content {
+            width: 33.5%;
+            text-align: start;
+            gap: 20px;
+        }
+
+        &__cards {
+            width: 66.4%;
+            height: 431px;
+            gap: 27.2px;
+        }
+    }
+}
