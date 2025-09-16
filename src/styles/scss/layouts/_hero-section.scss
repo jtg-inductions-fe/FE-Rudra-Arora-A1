@@ -81,6 +81,11 @@
         & > img {
             height: 100%;
         }
+
+        &:focus-visible {
+            outline: 2px solid variables.$black;
+            outline-offset: 8px;
+        }
     }
 
     &__icon {
@@ -148,6 +153,7 @@
             position: absolute;
             top: 1268.48px;
             left: 36.8px;
+            z-index: -1;
         }
     }
 }
