@@ -1,0 +1,82 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins' as *;
+@use '../components/card';
+
+.travel-point-section {
+    width: 100%;
+    margin-top: 65px;
+    @include flex-layout(column);
+
+    &__content {
+        @include flex-layout(column, flex-start, center);
+        padding-top: 30px;
+        gap: 18px;
+        text-align: center;
+
+        & > p {
+            padding: 20px 10px 0 10px;
+        }
+    }
+}
+
+.travel-point-section-object {
+    display: none;
+}
+
+@include media-up('md') {
+    .travel-point-section {
+        margin-top: 131.8px;
+
+        &__content {
+            padding-top: 55px;
+            gap: 15px;
+
+            & > p {
+                padding: 16px 35px 0 35px;
+            }
+        }
+
+        &__tablet-desktop-image {
+            padding-left: 31.5px;
+        }
+    }
+}
+
+@include media-up('lg') {
+    .travel-point-container {
+        position: relative;
+        max-width: 1440px;
+        margin: auto;
+    }
+
+    .travel-point-section {
+        @include flex-layout(row, flex-start, stretch);
+        margin-left: 0;
+        margin-top: 125px;
+        max-width: 1321px;
+
+        &__content {
+            width: 450px;
+            padding-top: 28px;
+            text-align: start;
+            @include flex-layout(column, flex-start, flex-start);
+            gap: 20px;
+
+            & > p {
+                padding: 12px 15px 0 0;
+            }
+        }
+
+        &__tablet-desktop-image {
+            padding: 0;
+        }
+    }
+
+    .travel-point-section-object {
+        display: block;
+        position: absolute;
+        top: 250px;
+        right: 10px;
+        z-index: -1;
+    }
+}
