@@ -1,4 +1,5 @@
 import '../styles/scss/main.scss';
+import '@splidejs/splide/css';
 
 const sidebarStateManagement = () => {
     const menu = document.getElementById('menu');
@@ -93,3 +94,9 @@ const travelPointCardGenerator = () => {
 };
 
 travelPointCardGenerator();
+
+import Splide from '@splidejs/splide';
+
+new Splide('.splide', {
+    type: 'loop',
+}).mount();
