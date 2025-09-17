@@ -18,11 +18,11 @@
 
     &__content {
         @include flex-layout(column, flex-start, center);
-        gap: 16px;
+        gap: 12px;
         text-align: center;
 
         & > p {
-            padding: 0 16px;
+            padding: 5px 16px;
         }
     }
 
@@ -38,7 +38,7 @@
     }
 
     &__heading {
-        padding: 0 16px 8px 16px;
+        padding: 0 16px 5px 16px;
 
         & > span {
             color: variables.$secondary-color;
@@ -49,7 +49,7 @@
         width: 100%;
         @include flex-layout(column);
         gap: 28.8px;
-        padding-top: 19.2px;
+        padding-top: 17px;
 
         &--get-started {
             padding: 24px 0;

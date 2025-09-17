@@ -116,3 +116,62 @@ import Splide from '@splidejs/splide';
 new Splide('.splide', {
     type: 'loop',
 }).mount();
+
+const footerSectionAccordion = () => {
+    const companyMenu = document.getElementById('company-menu');
+    const contactMenu = document.getElementById('contact-menu');
+    const meetMenu = document.getElementById('meet-menu');
+
+    const companyOpenMenu = document.getElementById('company-open-menu');
+    const contactOpenMenu = document.getElementById('contact-open-menu');
+    const meetOpenMenu = document.getElementById('meet-open-menu');
+
+    const companyCloseMenu = document.getElementById('company-close-menu');
+    const contactCloseMenu = document.getElementById('contact-close-menu');
+    const meetCloseMenu = document.getElementById('meet-close-menu');
+
+    const contactList = document.getElementById('contact-list');
+    const meetList = document.getElementById('meet-list');
+
+    companyOpenMenu.addEventListener('click', () => {
+        companyOpenMenu.toggleAttribute('hidden');
+        companyCloseMenu.toggleAttribute('hidden');
+        setTimeout(() => companyMenu.classList.toggle('active'), 150);
+        contactList.classList.toggle('active');
+    });
+
+    companyCloseMenu.addEventListener('click', () => {
+        companyOpenMenu.toggleAttribute('hidden');
+        companyCloseMenu.toggleAttribute('hidden');
+        companyMenu.classList.toggle('active');
+        setTimeout(() => contactList.classList.toggle('active'), 100);
+    });
+
+    contactOpenMenu.addEventListener('click', () => {
+        contactOpenMenu.toggleAttribute('hidden');
+        contactCloseMenu.toggleAttribute('hidden');
+        setTimeout(() => contactMenu.classList.toggle('active'), 150);
+        meetList.classList.toggle('active');
+    });
+
+    contactCloseMenu.addEventListener('click', () => {
+        contactOpenMenu.toggleAttribute('hidden');
+        contactCloseMenu.toggleAttribute('hidden');
+        contactMenu.classList.toggle('active');
+        setTimeout(() => meetList.classList.toggle('active'), 100);
+    });
+
+    meetOpenMenu.addEventListener('click', () => {
+        meetOpenMenu.toggleAttribute('hidden');
+        meetCloseMenu.toggleAttribute('hidden');
+        meetMenu.classList.toggle('active');
+    });
+
+    meetCloseMenu.addEventListener('click', () => {
+        meetOpenMenu.toggleAttribute('hidden');
+        meetCloseMenu.toggleAttribute('hidden');
+        meetMenu.classList.toggle('active');
+    });
+};
+
+footerSectionAccordion();
