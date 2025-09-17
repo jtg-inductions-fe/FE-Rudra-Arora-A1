@@ -5,11 +5,11 @@
 .services-section {
     @include flex-layout(column);
     gap: 25.6px;
-    padding-top: 58px;
+    padding-top: 66px;
 
     &__content {
         @include flex-layout(column);
-        gap: 16px;
+        gap: 20px;
         text-align: center;
     }
 
