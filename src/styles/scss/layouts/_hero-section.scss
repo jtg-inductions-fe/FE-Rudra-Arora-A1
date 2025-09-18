@@ -3,6 +3,10 @@
 @use '../components/buttons';
 @use '../abstracts/mixins' as *;
 
+.main-section {
+    margin-top: 110px;
+}
+
 .hero-section {
     @include flex-layout(column);
     padding-top: 35.2px;
@@ -94,6 +98,10 @@
 }
 
 @include media-up('md') {
+    .main-section {
+        margin-top: 140px;
+    }
+
     .hero-section {
         gap: 50px;
         @include flex-layout(column, flex-start, center);
@@ -153,7 +161,6 @@
             position: absolute;
             top: 1268.48px;
             left: 36.8px;
-            z-index: -1;
         }
     }
 }

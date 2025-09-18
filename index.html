@@ -122,7 +122,9 @@
                     </div>
                 </div>
             </nav>
+        </header>
 
+        <main class="main-section">
             <section class="container hero-section">
                 <div class="hero-section__image" aria-hidden="true">
                     <picture>
@@ -228,8 +230,8 @@
 
             <section class="container services-section">
                 <div class="services-section__content">
-                    <h4 class="preset-1">SERVICES</h4>
-                    <h1 class="subHeading">Our top value categories for you</h1>
+                    <p class="preset-1">SERVICES</p>
+                    <h2 class="subHeading">Our top value categories for you</h2>
                 </div>
 
                 <div
@@ -246,9 +248,9 @@
                                 alt="destination"
                             />
                         </div>
-                        <h2 class="services-section__card__title">
+                        <h3 class="services-section__card__title">
                             Best Tour Guide
-                        </h2>
+                        </h3>
                         <p class="services-section__card__description">
                             What looked like a small patch of purple grass,
                             above five feet.
@@ -265,9 +267,9 @@
                                 alt="booking"
                             />
                         </div>
-                        <h2 class="services-section__card__title">
+                        <h3 class="services-section__card__title">
                             Easy Booking
-                        </h2>
+                        </h3>
                         <p class="services-section__card__description">
                             Square, was moving across the sand in their
                             direction.
@@ -284,9 +286,9 @@
                                 alt="weather"
                             />
                         </div>
-                        <h2 class="services-section__card__title">
+                        <h3 class="services-section__card__title">
                             Weather Forecast
-                        </h2>
+                        </h3>
                         <p class="services-section__card__description">
                             What looked like a small patch of purple grass,
                             above five feet.
@@ -314,11 +316,13 @@
                     </div>
 
                     <div class="travel-point-section__content">
-                        <h4 class="preset-1">TRAVEL POINT</h4>
+                        <p class="preset-1">TRAVEL POINT</p>
                         <h2 class="subHeading">
                             We helping you find your dream location
                         </h2>
-                        <p class="para">
+                        <p
+                            class="travel-point-section__content__description para"
+                        >
                             Contrary to popular belief, Lorem Ipsum is not
                             simply random text. It has roots in a piece of
                             classical Latin literature from 45 BC.
@@ -338,7 +342,130 @@
                     />
                 </div>
             </div>
-        </header>
+
+            <section class="container features-section">
+                <div class="features-section__image">
+                    <picture>
+                        <source
+                            media="(min-width: 1440px)"
+                            srcset="
+                                ./src/assets/images/features-img-desktop.png
+                            "
+                        />
+                        <source
+                            media="(min-width:1024px)"
+                            srcset="./src/assets/images/features-img-tablet.png"
+                        />
+                        <img
+                            src="./src/assets/images/features-img-mobile.png"
+                            alt="features-main-image"
+                            loading="lazy"
+                        />
+                    </picture>
+                </div>
+
+                <div class="features-section__content">
+                    <p class="preset-1">KEY FEATURES</p>
+                    <h2 class="subHeading">We offer best services</h2>
+                    <p class="features-section__content__description para">
+                        Contrary to popular belief, Lorem Ipsum is not simply
+                        random text. It has roots in a piece of classical Latin
+                        literature from 45 BC.
+                    </p>
+
+                    <div class="features-section__card-container">
+                        <div class="features-section__card" tabindex="0">
+                            <span class="icon-locationpin" aria-hidden="true"
+                                ><span class="path1"></span
+                                ><span class="path2"></span
+                            ></span>
+
+                            <div>
+                                <h3 class="features-section__card__title">
+                                    We offer best services
+                                </h3>
+                                <p
+                                    class="card-text features-section__card__description"
+                                >
+                                    Lorem Ipsum is not simply random text
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="features-section__card" tabindex="0">
+                            <span class="icon-calendar" aria-hidden="true"
+                                ><span class="path1"></span
+                                ><span class="path2"></span
+                            ></span>
+
+                            <div>
+                                <h3 class="features-section__card__title">
+                                    Schedule your trip
+                                </h3>
+                                <p
+                                    class="card-text features-section__card__description"
+                                >
+                                    It has roots in a piece of classical
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="features-section__card" tabindex="0">
+                            <span class="icon-coupon" aria-hidden="true"
+                                ><span class="path1"></span
+                                ><span class="path2"></span
+                            ></span>
+
+                            <div>
+                                <h3 class="features-section__card__title">
+                                    Get discounted coupons
+                                </h3>
+                                <p
+                                    class="card-text features-section__card__description"
+                                >
+                                    Lorem Ipsum is not simply random text
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container newsletter-section">
+                <h4 class="preset-1 newsletter-section__title">
+                    SUBSCRIBE TO OUR NEWSLETTER
+                </h4>
+                <h2 class="subHeading newsletter-section__sub-title">
+                    Prepare yourself & let’s explore the beauty of the world
+                </h2>
+
+                <form action="" class="newsletter-section__form">
+                    <i
+                        class="icon-mail-icon newsletter-section__form__icon"
+                    ></i>
+                    <input
+                        type="email"
+                        name="email"
+                        class="newsletter-section__form__email-input"
+                        placeholder="Your Email"
+                    />
+                    <input
+                        type="submit"
+                        value="Subscribe"
+                        required
+                        class="button button--primary newsletter-section__form--submit-button"
+                    />
+                </form>
+
+                <img
+                    src="./src/assets/images/newsletter-graphic.png"
+                    alt=""
+                    loading="lazy"
+                    aria-hidden="true"
+                    class="newsletter-section__graphic"
+                />
+            </section>
+        </main>
 
         <script type="module" src="./src/script/index.js"></script>
     </body>

@@ -63,10 +63,17 @@ h2 {
     font-size: 1rem;
     font-weight: 400;
     color: variables.$text-color-1;
-    line-height: 1.5rem;
+    line-height: 1.6rem;
 
     @include mixins.media-up('md') {
         font-size: 1.1rem;
         line-height: 1.8rem;
     }
+}
+
+.card-text {
+    font-size: 1.12rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    color: variables.$text-color-1;
 }

@@ -1,0 +1,150 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.newsletter-section {
+    padding-top: 915px;
+    @include flex-layout(column, flex-start, center);
+    text-align: center;
+    gap: 33px;
+
+    &__title {
+        padding: 0 30px;
+    }
+
+    &__sub-title {
+        padding: 0 40px;
+    }
+
+    &__form {
+        width: 334px;
+
+        padding-top: 30px;
+        position: relative;
+        @include flex-layout(column, flex-start, stretch);
+        gap: 30px;
+
+        &__icon {
+            font-size: 20px;
+            position: absolute;
+            top: 55px;
+            left: 33px;
+        }
+
+        &__email-input {
+            padding-left: 70px;
+            height: 72px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.4rem;
+
+            &::placeholder {
+                font-size: 14px;
+                font-weight: 700;
+                color: $text-black-75;
+            }
+
+            &:focus-visible {
+                outline: 3px solid $secondary-color;
+                outline-offset: 3px;
+            }
+        }
+
+        &--submit-button {
+            padding: 25px 0;
+            border-radius: 15px;
+            font-size: 1rem;
+
+            &:focus-visible {
+                outline: 3px solid $secondary-color;
+                outline-offset: 3px;
+            }
+        }
+    }
+
+    &__graphic {
+        display: none;
+    }
+}
+
+@include media-up('md') {
+    .newsletter-section {
+        position: relative;
+        background-color: $form-section-bg;
+        padding: 132px 0;
+        border-radius: 20px;
+        margin-top: 515px;
+
+        &__sub-title {
+            padding: 0 70px;
+        }
+
+        &__form {
+            width: 769px;
+            @include flex-layout(row, center, stretch);
+
+            &__icon {
+                font-size: 26px;
+                top: 65px;
+            }
+
+            &__email-input {
+                width: 502px;
+                height: 96px;
+                padding-left: 78px;
+
+                &::placeholder {
+                    font-size: 23px;
+                }
+            }
+
+            &--submit-button {
+                border-radius: 35px;
+                width: 235px;
+                padding: 40px 0;
+                font-size: 1.43rem;
+            }
+        }
+
+        &__graphic {
+            position: absolute;
+            display: block;
+            top: -48px;
+            left: -36px;
+        }
+    }
+}
+
+@include media-up('lg') {
+    .newsletter-section {
+        margin-top: 770px;
+
+        &__sub-title {
+            padding: 0 160px;
+            font-size: 3.43rem;
+            line-height: 4.12rem;
+        }
+
+        &__form {
+            width: 1065px;
+            gap: 80px;
+
+            &__icon {
+                left: 40px;
+            }
+
+            &__email-input {
+                padding-left: 85px;
+                width: 766px;
+            }
+
+            &--submit-button {
+                width: 235px;
+            }
+        }
+
+        &__graphic {
+            top: -45px;
+            left: -35px;
+        }
+    }
+}
