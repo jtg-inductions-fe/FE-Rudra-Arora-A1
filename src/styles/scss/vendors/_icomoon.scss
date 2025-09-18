@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 @font-face {
     font-family: 'icomoon';
     src: url('../../assets/icomoon/icomoon.eot?c17jfn');
@@ -70,26 +72,26 @@
 }
 .icon-ham-menu:before {
     content: '\e908';
-    color: #5d50c6;
+    color: $primary-color;
 }
 .icon-play-circle:before {
     content: '\e909';
-    color: #5d50c6;
+    color: $primary-color;
 }
 .icon-work-bag:before {
     content: '\e90a';
-    color: #f85e9f;
+    color: $secondary-color;
 }
 .icon-mail-icon:before {
     content: '\e90c';
 }
 .icon-fb-logo:before {
     content: '\e90d';
-    color: #5d50c6;
+    color: $primary-color;
 }
 .icon-insta-logo .path1:before {
     content: '\e90e';
-    color: rgb(93, 80, 198);
+    color: $primary-color;
 }
 .icon-insta-logo .path2:before {
     content: '\e90f';
@@ -98,7 +100,7 @@
 }
 .icon-twt-logo .path1:before {
     content: '\e902';
-    color: rgb(93, 80, 198);
+    color: $primary-color;
 }
 .icon-twt-logo .path2:before {
     content: '\e903';

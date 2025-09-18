@@ -10,7 +10,7 @@
 }
 
 .testimonial-section {
-    margin-top: 56px;
+    margin-top: 70px;
     @include flex-layout(column, flex-start, center);
     gap: 16px;
 }
@@ -60,7 +60,7 @@
     position: absolute;
     right: 0;
     left: 0;
-    margin-top: 68px;
+    margin-top: 74px;
 
     .splide__arrow {
         width: 64px;
@@ -81,7 +81,7 @@
 }
 
 .splide__pagination {
-    display: flex;
+    @include flex-layout(row, center);
     gap: 18px;
 
     & > li > button {
@@ -101,6 +101,7 @@
         margin: auto;
 
         &__bg {
+            display: block;
             max-width: 1024px;
             position: absolute;
             top: -150px;
@@ -163,7 +164,7 @@
     }
 
     .testimonial-section {
-        margin-top: 38px;
+        margin-top: 70px;
     }
 
     .splide__slide {
@@ -173,6 +174,6 @@
     }
 
     .splide__arrows {
-        top: 130px;
+        top: 170px;
     }
 }

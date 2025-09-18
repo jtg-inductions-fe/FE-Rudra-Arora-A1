@@ -10,7 +10,7 @@
 .hero-section {
     @include flex-layout(column);
     padding-top: 35.2px;
-    gap: 32px;
+    gap: 34px;
 
     &__image {
         height: 364.8px;
@@ -103,7 +103,7 @@
     }
 
     .hero-section {
-        gap: 50px;
+        gap: 55px;
         @include flex-layout(column, flex-start, center);
         margin-top: 32px;
 
@@ -148,7 +148,7 @@
 
         &__logos {
             gap: 32px;
-            margin-top: 160px;
+            margin-top: 165px;
             padding: 0 128px;
         }
 

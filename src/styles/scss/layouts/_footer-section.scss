@@ -2,7 +2,7 @@
 @use '../abstracts/variables' as *;
 
 .footer-section {
-    margin-top: 75px;
+    margin-top: 98px;
     @include flex-layout(column);
     gap: 50px;
 
@@ -35,7 +35,7 @@
         padding-top: 41px;
         @include flex-layout(column);
         gap: 66px;
-        height: 300px;
+        height: auto;
 
         &__list {
             position: relative;
@@ -50,26 +50,31 @@
 
             & > ul {
                 @include flex-layout(column, center);
-                width: 396.28px;
+                width: min(100%, 396px);
                 font-size: 1.12rem;
                 gap: 30px;
                 position: absolute;
-                right: 0;
                 top: 60px;
                 text-align: center;
                 opacity: 0;
+                pointer-events: none;
                 transition: opacity 0.2s ease-in;
 
                 &.active {
+                    pointer-events: auto;
                     opacity: 1;
                 }
 
-                & li a {
+                & li > a {
                     color: $text-color-1;
 
                     &:focus-visible {
                         outline: 2px solid $black;
                         outline-offset: 8px;
+                    }
+
+                    &:hover {
+                        color: $black;
                     }
                 }
             }
@@ -123,6 +128,15 @@
                 & li > a {
                     font-size: 1.12rem;
                     color: $text-color-1;
+
+                    &:hover {
+                        color: $black;
+                    }
+
+                    &:focus-visible {
+                        outline: 2px solid $black;
+                        outline-offset: 8px;
+                    }
                 }
             }
         }
@@ -132,7 +146,7 @@
 @include media-up('lg') {
     .footer-section {
         @include flex-layout(row);
-        margin-top: 180px;
+        margin-top: 195px;
         gap: 20px;
 
         &__head-content {

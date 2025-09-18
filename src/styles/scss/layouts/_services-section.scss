@@ -15,16 +15,16 @@
 
     &__cards {
         @include flex-layout(column);
-        gap: 20px;
-        padding-top: 10px;
+        gap: 18px;
+        padding-top: 2px;
     }
 }
 
 @include media-up('md') {
     .services-section {
-        margin-top: 72px;
+        padding-top: 128px;
         @include flex-layout(column, flex-start, center);
-        gap: 76.8px;
+        gap: 64px;
 
         &__content {
             & > h1 {
@@ -42,7 +42,6 @@
 @include media-up('lg') {
     .services-section {
         @include flex-layout(row, flex-start, center);
-        margin-top: 68px;
         gap: 0;
 
         &__content {

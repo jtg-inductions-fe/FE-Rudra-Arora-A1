@@ -2,7 +2,7 @@
 @use '../abstracts/variables' as *;
 
 .newsletter-section {
-    padding-top: 190px;
+    padding-top: 172px;
     @include flex-layout(column, flex-start, center);
     text-align: center;
     gap: 33px;
