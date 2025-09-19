@@ -5,6 +5,7 @@
     margin-top: 98px;
     @include flex-layout(column);
     gap: 50px;
+    padding-bottom: 200px;
 
     &__head-content {
         @include flex-layout(column);
@@ -19,6 +20,15 @@
             font-size: 24px;
         }
 
+        &__logo {
+            height: 40px;
+
+            &:focus-visible {
+                outline: 2px solid $secondary-color;
+                outline-offset: 2px;
+            }
+        }
+
         &__description {
             padding-top: 12px;
         }
@@ -28,6 +38,13 @@
             font-size: 2rem;
             gap: 32px;
             padding-top: 13px;
+
+            & a {
+                &:focus-visible {
+                    outline: 2px solid $secondary-color;
+                    outline-offset: 2px;
+                }
+            }
         }
     }
 
@@ -69,7 +86,7 @@
                     color: $text-color-1;
 
                     &:focus-visible {
-                        outline: 2px solid $black;
+                        outline: 2px solid $secondary-color;
                         outline-offset: 8px;
                     }
 
@@ -94,6 +111,7 @@
     .footer-section {
         margin-top: 60px;
         gap: 63px;
+        padding-bottom: 100px;
 
         &__head-content {
             &__description {
@@ -126,6 +144,7 @@
                 gap: 30px;
 
                 & li > a {
+                    display: inline-block;
                     font-size: 1.12rem;
                     color: $text-color-1;
 
@@ -134,7 +153,7 @@
                     }
 
                     &:focus-visible {
-                        outline: 2px solid $black;
+                        outline: 2px solid $secondary-color;
                         outline-offset: 8px;
                     }
                 }
@@ -147,11 +166,21 @@
     .footer-section {
         @include flex-layout(row);
         margin-top: 195px;
-        gap: 20px;
+        gap: 60px;
 
         &__head-content {
             &__social-logos {
                 padding-top: 95px;
+            }
+
+            &__description {
+                width: 564px;
+                font-size: 1.42rem;
+                line-height: 2.2rem;
+            }
+
+            &__social-logos {
+                padding-top: 45px;
             }
         }
 

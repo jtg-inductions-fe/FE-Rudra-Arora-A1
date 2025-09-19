@@ -10,7 +10,7 @@
 }
 
 .testimonial-section {
-    margin-top: 70px;
+    margin-top: 72px;
     @include flex-layout(column, flex-start, center);
     gap: 16px;
 }
@@ -60,11 +60,16 @@
     position: absolute;
     right: 0;
     left: 0;
-    margin-top: 74px;
+    margin-top: 72px;
 
     .splide__arrow {
         width: 64px;
         height: 64px;
+    }
+
+    .splide__arrow:focus-visible {
+        outline: 3px solid $secondary-color !important;
+        outline-offset: 4px;
     }
 
     .splide__arrow--next {
@@ -90,6 +95,11 @@
 
         &.is-active {
             background-color: $secondary-color;
+        }
+
+        &:focus-visible {
+            outline: 3px solid $secondary-color !important;
+            outline-offset: 4px;
         }
     }
 }
@@ -138,7 +148,7 @@
     .splide__arrows {
         position: absolute;
         margin-top: 0;
-        top: 190px;
+        top: 230px;
 
         .splide__arrow {
             width: 100px;
@@ -174,6 +184,6 @@
     }
 
     .splide__arrows {
-        top: 170px;
+        top: 210px;
     }
 }

@@ -1,5 +1,14 @@
 import '@splidejs/splide/css';
-import '../styles/scss/main.scss';
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.add('loader--hidden');
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }
+});
 
 const sidebarStateManagement = () => {
     const menu = document.getElementById('menu');
@@ -8,16 +17,10 @@ const sidebarStateManagement = () => {
     const navButton = document.getElementById('navButtonMobile');
     const navLinks = document.getElementsByClassName('navbar__link');
     const content = document.querySelector('.main-section');
+    const footer = document.getElementById('footer');
 
     const setOpen = (open) => {
-        if (
-            !menu ||
-            !hamburger ||
-            !cross ||
-            !navButton ||
-            !content ||
-            !navLinks
-        )
+        if (!menu || !hamburger || !cross || !navButton || !content || !footer)
             throw new Error('HTML content not loaded');
         navButton.classList.toggle('active');
         menu.classList.toggle('active');
@@ -35,11 +38,13 @@ const sidebarStateManagement = () => {
     hamburger.addEventListener('click', () => {
         setOpen(true);
         content.inert = true;
+        footer.inert = true;
         document.body.style.overflow = 'hidden';
     });
     cross.addEventListener('click', () => {
         setOpen(false);
         content.inert = false;
+        footer.inert = false;
         document.body.style.overflow = 'visible';
     });
 
@@ -47,6 +52,7 @@ const sidebarStateManagement = () => {
         if (e.key === 'Escape') {
             setOpen(false);
             content.inert = false;
+            footer.inert = false;
             document.body.style.overflow = 'visible';
         }
     });
@@ -58,16 +64,21 @@ function reorderNavbarForTabOrder() {
     const navbar = document.querySelector('.navbar');
     const logo = navbar.querySelector('.navbar__mainLogo');
     const menuIcons = navbar.querySelector('.navbar__menuIcons');
+    const pagination = document.getElementById('splidePagination');
+    const arrows = document.getElementById('splideArrows');
+    const splide = document.getElementById('splide');
     if (!navbar || !logo || !menuIcons)
         throw new Error('HTML content not loaded');
 
     if (window.innerWidth < 1023) {
         if (logo.nextSibling !== menuIcons) {
             navbar.insertBefore(logo, menuIcons);
+            splide.insertBefore(pagination, arrows);
         }
     } else {
         if (menuIcons.nextSibling !== logo) {
             navbar.insertBefore(menuIcons, logo);
+            splide.insertBefore(arrows, pagination);
         }
     }
 }
@@ -141,6 +152,36 @@ const createAccordion = (menuEl, openBtn, closeBtn, nextList) => {
         menuEl.inert = true;
     });
 };
+
+const emailValidation = () => {
+    const emailInput = document.getElementById('email');
+    const submit = document.getElementById('submit');
+    const inputGroup = document.getElementById('newsletter-input-group');
+
+    if (!emailInput || !submit || !inputGroup) {
+        throw new Error('HTML content not loaded');
+    }
+
+    submit.addEventListener('click', () => {
+        if (!emailInput.value) {
+            emailInput.classList.add('input-error');
+            const message = document.createElement('p');
+            message.innerText = 'Please enter a valid E-mail';
+            message.className = 'email-error-msg';
+            inputGroup.appendChild(message);
+            setTimeout(() => {
+                message.remove();
+                emailInput.classList.remove('input-error');
+            }, 2000);
+        } else {
+            emailInput.value = '';
+            alert('E-mail Submitted');
+            emailInput.classList.remove('input-error');
+        }
+    });
+};
+
+emailValidation();
 
 const footerSectionAccordion = () => {
     const companyMenu = document.getElementById('company-menu');

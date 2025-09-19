@@ -14,6 +14,7 @@
 
     &__image {
         height: 364.8px;
+        pointer-events: none;
     }
 
     &__content {
@@ -87,7 +88,7 @@
         }
 
         &:focus-visible {
-            outline: 2px solid variables.$black;
+            outline: 2px solid variables.$secondary-color;
             outline-offset: 8px;
         }
     }
@@ -103,6 +104,7 @@
     }
 
     .hero-section {
+        position: relative;
         gap: 55px;
         @include flex-layout(column, flex-start, center);
         margin-top: 32px;
@@ -159,8 +161,8 @@
         &__icon {
             display: block;
             position: absolute;
-            top: 1268.48px;
-            left: 36.8px;
+            top: 1125px;
+            left: -25px;
         }
     }
 }
@@ -212,8 +214,8 @@
         }
 
         &__icon {
-            top: 832px;
-            left: 32px;
+            top: 700px;
+            left: -100px;
         }
     }
 }

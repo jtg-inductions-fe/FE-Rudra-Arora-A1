@@ -23,6 +23,11 @@
         text-align: start;
         padding-top: 18px;
         gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    &__image {
+        pointer-events: none;
     }
 }
 

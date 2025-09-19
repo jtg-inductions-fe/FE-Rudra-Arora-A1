@@ -5,8 +5,14 @@
         <title>Travel.co - Explore</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./src/styles/scss/main.scss" />
     </head>
     <body>
+        <div id="loader" class="loader-wrapper">
+            <!-- <img src="./src/assets/images/loading.gif" alt="Loading..." /> -->
+            <div class="loader"></div>
+        </div>
+
         <header class="gradient">
             <nav class="nav-parent">
                 <div class="container navbar">
@@ -442,152 +448,166 @@
                     <p class="preset-1">TESTIMONIALS</p>
                     <h2 class="subHeading">Trust our clients</h2>
 
-                    <section class="splide">
-                        <div style="position: relative">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li class="splide__slide">
+                    <section class="splide" id="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img
+                                        src="./src/assets/images/testimonial-card-img.png"
+                                        alt="testimonial-card-img"
+                                        loading="lazy"
+                                    />
+                                    <div class="splide__slide__content">
+                                        <span class="splide__slide__title"
+                                            >Mark Smith</span
+                                        >
+                                        <span class="splide__slide__subtitle">
+                                            / Travel Enthusiast</span
+                                        >
+                                    </div>
+                                    <div class="splide__slide__star">
                                         <img
-                                            src="./src/assets/images/testimonial-card-img.png"
-                                            alt="testimonial-card-img"
-                                            loading="lazy"
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
                                         />
-                                        <div class="splide__slide__content">
-                                            <span class="splide__slide__title"
-                                                >Mark Smith</span
-                                            >
-                                            <span
-                                                class="splide__slide__subtitle"
-                                            >
-                                                / Travel Enthusiast</span
-                                            >
-                                        </div>
-                                        <div class="splide__slide__star">
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                        </div>
-                                        <p class="splide__slide__description">
-                                            Contrary to popular belief, Lorem
-                                            Ipsum is not simply random text. It
-                                            has roots in a piece of classical
-                                            Latin literature from 45 BC.
-                                        </p>
-                                    </li>
-
-                                    <li class="splide__slide">
                                         <img
-                                            src="./src/assets/images/testimonial-card-img.png"
-                                            alt="testimonial-card-img"
-                                            loading="lazy"
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
                                         />
-                                        <div class="splide__slide__content">
-                                            <span class="splide__slide__title"
-                                                >Mark Smith</span
-                                            >
-                                            <span
-                                                class="splide__slide__subtitle"
-                                            >
-                                                / Travel Enthusiast</span
-                                            >
-                                        </div>
-                                        <div class="splide__slide__star">
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                        </div>
-                                        <p class="splide__slide__description">
-                                            Contrary to popular belief, Lorem
-                                            Ipsum is not simply random text. It
-                                            has roots in a piece of classical
-                                            Latin literature from 45 BC.
-                                        </p>
-                                    </li>
-
-                                    <li class="splide__slide">
                                         <img
-                                            src="./src/assets/images/testimonial-card-img.png"
-                                            alt="testimonial-card-img"
-                                            loading="lazy"
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
                                         />
-                                        <div class="splide__slide__content">
-                                            <span class="splide__slide__title"
-                                                >Mark Smith</span
-                                            >
-                                            <span
-                                                class="splide__slide__subtitle"
-                                            >
-                                                / Travel Enthusiast</span
-                                            >
-                                        </div>
-                                        <div class="splide__slide__star">
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                        </div>
-                                        <p class="splide__slide__description">
-                                            Contrary to popular belief, Lorem
-                                            Ipsum is not simply random text. It
-                                            has roots in a piece of classical
-                                            Latin literature from 45 BC.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                    </div>
+                                    <p class="splide__slide__description">
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </p>
+                                </li>
 
-                            <div class="splide__arrows"></div>
+                                <li class="splide__slide">
+                                    <img
+                                        src="./src/assets/images/testimonial-card-img.png"
+                                        alt="testimonial-card-img"
+                                        loading="lazy"
+                                    />
+                                    <div class="splide__slide__content">
+                                        <span class="splide__slide__title"
+                                            >Mark Smith</span
+                                        >
+                                        <span class="splide__slide__subtitle">
+                                            / Travel Enthusiast</span
+                                        >
+                                    </div>
+                                    <div class="splide__slide__star">
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                    </div>
+                                    <p class="splide__slide__description">
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </p>
+                                </li>
+
+                                <li class="splide__slide">
+                                    <img
+                                        src="./src/assets/images/testimonial-card-img.png"
+                                        alt="testimonial-card-img"
+                                        loading="lazy"
+                                    />
+                                    <div class="splide__slide__content">
+                                        <span class="splide__slide__title"
+                                            >Mark Smith</span
+                                        >
+                                        <span class="splide__slide__subtitle">
+                                            / Travel Enthusiast</span
+                                        >
+                                    </div>
+                                    <div class="splide__slide__star">
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                    </div>
+                                    <p class="splide__slide__description">
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </p>
+                                </li>
+                            </ul>
                         </div>
+
+                        <div
+                            class="splide__arrows splide__arrows--ltr"
+                            id="splideArrows"
+                        >
+                            <button class="splide__arrow splide__arrow--prev">
+                                <i
+                                    class="icon-Group-9237-1-converted"
+                                    style="font-size: 5rem"
+                                ></i>
+                            </button>
+                            <button
+                                class="icon-button-next splide__arrow splide__arrow--next"
+                                style="font-size: 4rem"
+                            >
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </button>
+                        </div>
+
+                        <ul
+                            class="splide__pagination"
+                            id="splidePagination"
+                        ></ul>
                     </section>
                 </section>
             </div>
@@ -602,15 +622,22 @@
 
                 <form action="" class="newsletter-section__form">
                     <i class="icon-mail-icon newsletter-section__icon"></i>
+                    <div
+                        class="newsletter-input-group"
+                        id="newsletter-input-group"
+                    >
+                        <input
+                            type="email"
+                            name="email"
+                            class="newsletter-section__email-input"
+                            id="email"
+                            placeholder="Your Email"
+                        />
+                    </div>
                     <input
-                        type="email"
-                        name="email"
-                        class="newsletter-section__email-input"
-                        placeholder="Your Email"
-                    />
-                    <input
-                        type="submit"
+                        type="button"
                         value="Subscribe"
+                        id="submit"
                         class="button button--primary newsletter-section__submit-button"
                     />
                 </form>
@@ -625,14 +652,15 @@
             </section>
         </main>
 
-        <footer class="container footer-section">
+        <footer class="container footer-section" id="footer">
             <div class="footer-section__head-content">
                 <div class="footer-section__head-content__title-logo">
-                    <img
-                        src="./src/assets/images/logo.png"
-                        alt="footer travlog logo"
-                        class="footer-section__head-content__logo"
-                    />
+                    <a class="footer-section__head-content__logo" href="/">
+                        <img
+                            src="./src/assets/images/logo.png"
+                            alt="footer travlog logo"
+                        />
+                    </a>
                     <h2 class="footer-section__head-content__title">Travlog</h2>
                 </div>
 

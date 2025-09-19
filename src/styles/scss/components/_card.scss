@@ -5,15 +5,23 @@
     @include flex-layout(column, flex-start, center);
     gap: 25px;
     padding: 33px 16px;
+    height: 279px;
     border-radius: 30px;
     box-shadow: 1px 1px 7px 2px variables.$shadow-color;
+    transform: scale(1);
+    transition: transform 0.3s linear;
 
     &__description {
+        display: -webkit-box;
         text-align: center;
         padding: 4px 12.8px 0 12.8px;
         font-size: 1.2rem;
         line-height: 1.8rem;
         color: variables.$text-color-1;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__title {
@@ -23,7 +31,6 @@
     &:hover {
         cursor: pointer;
         transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
     }
 
     &:focus-visible {
@@ -35,6 +42,7 @@
 @include media-up('md') {
     .services-section__card {
         flex: 1;
+        height: 443px;
 
         & > div {
             margin-top: 25px;
@@ -42,8 +50,8 @@
         }
 
         &__description {
-            padding: 0 48px;
-            line-height: 1.7rem;
+            padding: 6px 45px 0 45px;
+            line-height: 1.8rem;
         }
 
         &__title {
@@ -77,19 +85,14 @@
     }
 }
 
-.travel-point-section__cards-container {
-    width: 100%;
-    @include flex-layout(column);
-    padding-top: 15px;
-    gap: 15px;
-}
-
 .travel-point-section__card {
     height: 151px;
     box-shadow: 1px 1px 3px 2px variables.$shadow-color;
     border-radius: 33px;
     @include flex-layout(column, center, stretch);
     gap: 20px;
+    transform: scale(1);
+    transition: transform 0.3s linear;
 
     & > h3 {
         color: variables.$tertiary-color;
@@ -104,7 +107,6 @@
     &:hover {
         cursor: pointer;
         transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
     }
 
     &:focus-visible {
@@ -114,27 +116,12 @@
 }
 
 @include media-up('md') {
-    .travel-point-section__cards-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 832px;
-        gap: 30px;
-        padding-top: 40px;
-    }
-
     .travel-point-section__card {
         width: 400px;
     }
 }
 
 @include media-up('lg') {
-    .travel-point-section__cards-container {
-        width: 450px;
-        gap: 30px;
-        padding-top: 38px;
-        z-index: -1;
-    }
-
     .travel-point-section__card {
         text-align: center;
         width: 209.29px;
@@ -148,6 +135,11 @@
     @include flex-layout(column);
     padding-top: 32px;
     border-radius: 30px;
+    transform: scale(1);
+    box-shadow: none;
+    transition:
+        transform 0.3s linear,
+        box-shadow 0.3s linear;
 
     & > span {
         font-size: 100px;
@@ -156,6 +148,11 @@
     &__description {
         margin-top: 10px;
         padding-right: 34px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__title {
@@ -166,8 +163,7 @@
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.02);
-        transition: transform 0.3s ease-in;
+        transform: scale(1.05);
         box-shadow: 1px 1px 3px 2px variables.$shadow-color;
     }
 
