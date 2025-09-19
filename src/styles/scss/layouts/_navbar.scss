@@ -9,8 +9,10 @@
     background: variables.$background-color-white;
     display: flex;
     align-items: center;
-    position: sticky;
+    width: 100vw;
+    position: fixed;
     top: 0;
+    z-index: 100;
 }
 
 .navbar {
@@ -40,7 +42,7 @@
         visibility: hidden;
         transition:
             opacity 0.2s ease-in-out,
-            visibility 0s 0s;
+            visibility 0.3s linear;
 
         &.active {
             opacity: 1;
@@ -96,9 +98,14 @@
         align-items: center;
         gap: 16px;
         background-color: variables.$background-transparent;
+        opacity: 0;
         visibility: hidden;
+        transition:
+            opacity 0.2s ease-in-out,
+            visibility 0.3s linear;
 
         &.active {
+            opacity: 1;
             visibility: visible;
         }
     }

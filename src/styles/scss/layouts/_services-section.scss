@@ -5,7 +5,7 @@
 .services-section {
     @include flex-layout(column);
     gap: 25.6px;
-    padding-top: 61px;
+    padding-top: 58px;
 
     &__content {
         @include flex-layout(column);
@@ -15,7 +15,8 @@
 
     &__cards {
         @include flex-layout(column);
-        gap: 17.6px;
+        gap: 20px;
+        padding-top: 10px;
     }
 }
 
@@ -32,6 +33,7 @@
         }
 
         &__cards {
+            padding-top: 0;
             flex-direction: row;
         }
     }

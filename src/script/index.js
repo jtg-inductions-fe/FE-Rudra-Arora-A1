@@ -6,11 +6,17 @@ const sidebarStateManagement = () => {
     const cross = document.getElementById('cross');
     const navButton = document.getElementById('navButtonMobile');
     const navLinks = document.getElementsByClassName('navbar__link');
-
-    menu.style.display = 'none';
+    const content = document.querySelector('.main-section');
 
     const setOpen = (open) => {
-        if (!menu || !hamburger || !cross || !navButton)
+        if (
+            !menu ||
+            !hamburger ||
+            !cross ||
+            !navButton ||
+            !content ||
+            !navLinks
+        )
             throw new Error('HTML content not loaded');
         navButton.classList.toggle('active');
         menu.classList.toggle('active');
@@ -22,23 +28,51 @@ const sidebarStateManagement = () => {
         element.addEventListener('click', () => {
             setOpen(false);
             document.body.style.overflow = 'visible';
-            setTimeout(() => (menu.style.display = 'none'), 500);
         });
     });
 
     hamburger.addEventListener('click', () => {
         setOpen(true);
+        content.inert = true;
         document.body.style.overflow = 'hidden';
-        menu.style.display = 'block';
     });
     cross.addEventListener('click', () => {
         setOpen(false);
+        content.inert = false;
         document.body.style.overflow = 'visible';
-        setTimeout(() => (menu.style.display = 'none'), 500);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            setOpen(false);
+            content.inert = false;
+            document.body.style.overflow = 'visible';
+        }
     });
 };
 
 sidebarStateManagement();
+
+function reorderNavbarForTabOrder() {
+    const navbar = document.querySelector('.navbar');
+    const logo = navbar.querySelector('.navbar__mainLogo');
+    const menuIcons = navbar.querySelector('.navbar__menuIcons');
+    if (!navbar || !logo || !menuIcons)
+        throw new Error('HTML content not loaded');
+
+    if (window.innerWidth < 1023) {
+        if (logo.nextSibling !== menuIcons) {
+            navbar.insertBefore(logo, menuIcons);
+        }
+    } else {
+        if (menuIcons.nextSibling !== logo) {
+            navbar.insertBefore(menuIcons, logo);
+        }
+    }
+}
+
+window.addEventListener('DOMContentLoaded', reorderNavbarForTabOrder);
+window.addEventListener('resize', reorderNavbarForTabOrder);
 
 const travelPointCardGenerator = () => {
     const cardContainer = document.getElementById(
@@ -58,7 +92,7 @@ const travelPointCardGenerator = () => {
 
     for (let i = 0; i < cardArray.length; i++) {
         let div = document.createElement('div');
-        let h4 = document.createElement('h4');
+        let h4 = document.createElement('h3');
         let p = document.createElement('p');
 
         h4.innerHTML = cardArray[i].heading;
