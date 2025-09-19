@@ -1,3 +1,4 @@
+import '@splidejs/splide/css';
 import '../styles/scss/main.scss';
 
 const sidebarStateManagement = () => {
@@ -6,11 +7,17 @@ const sidebarStateManagement = () => {
     const cross = document.getElementById('cross');
     const navButton = document.getElementById('navButtonMobile');
     const navLinks = document.getElementsByClassName('navbar__link');
-
-    menu.style.display = 'none';
+    const content = document.querySelector('.main-section');
 
     const setOpen = (open) => {
-        if (!menu || !hamburger || !cross || !navButton)
+        if (
+            !menu ||
+            !hamburger ||
+            !cross ||
+            !navButton ||
+            !content ||
+            !navLinks
+        )
             throw new Error('HTML content not loaded');
         navButton.classList.toggle('active');
         menu.classList.toggle('active');
@@ -22,23 +29,51 @@ const sidebarStateManagement = () => {
         element.addEventListener('click', () => {
             setOpen(false);
             document.body.style.overflow = 'visible';
-            setTimeout(() => (menu.style.display = 'none'), 500);
         });
     });
 
     hamburger.addEventListener('click', () => {
         setOpen(true);
+        content.inert = true;
         document.body.style.overflow = 'hidden';
-        menu.style.display = 'block';
     });
     cross.addEventListener('click', () => {
         setOpen(false);
+        content.inert = false;
         document.body.style.overflow = 'visible';
-        setTimeout(() => (menu.style.display = 'none'), 500);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            setOpen(false);
+            content.inert = false;
+            document.body.style.overflow = 'visible';
+        }
     });
 };
 
 sidebarStateManagement();
+
+function reorderNavbarForTabOrder() {
+    const navbar = document.querySelector('.navbar');
+    const logo = navbar.querySelector('.navbar__mainLogo');
+    const menuIcons = navbar.querySelector('.navbar__menuIcons');
+    if (!navbar || !logo || !menuIcons)
+        throw new Error('HTML content not loaded');
+
+    if (window.innerWidth < 1023) {
+        if (logo.nextSibling !== menuIcons) {
+            navbar.insertBefore(logo, menuIcons);
+        }
+    } else {
+        if (menuIcons.nextSibling !== logo) {
+            navbar.insertBefore(menuIcons, logo);
+        }
+    }
+}
+
+window.addEventListener('DOMContentLoaded', reorderNavbarForTabOrder);
+window.addEventListener('resize', reorderNavbarForTabOrder);
 
 const travelPointCardGenerator = () => {
     const cardContainer = document.getElementById(
@@ -58,7 +93,7 @@ const travelPointCardGenerator = () => {
 
     for (let i = 0; i < cardArray.length; i++) {
         let div = document.createElement('div');
-        let h4 = document.createElement('h4');
+        let h4 = document.createElement('h3');
         let p = document.createElement('p');
 
         h4.innerHTML = cardArray[i].heading;
@@ -75,3 +110,81 @@ const travelPointCardGenerator = () => {
 };
 
 travelPointCardGenerator();
+
+import Splide from '@splidejs/splide';
+
+new Splide('.splide', {
+    type: 'loop',
+}).mount();
+
+const createAccordion = (menuEl, openBtn, closeBtn, nextList) => {
+    if (!menuEl || !openBtn || !closeBtn) {
+        throw new Error('Accordion elements not found');
+    }
+    menuEl.inert = true;
+
+    openBtn.addEventListener('click', () => {
+        openBtn.toggleAttribute('hidden');
+        closeBtn.toggleAttribute('hidden');
+        setTimeout(() => menuEl.classList.toggle('active'), 150);
+        if (nextList) nextList.classList.toggle('active');
+        menuEl.inert = false;
+    });
+
+    closeBtn.addEventListener('click', () => {
+        openBtn.toggleAttribute('hidden');
+        closeBtn.toggleAttribute('hidden');
+        menuEl.classList.toggle('active');
+        if (nextList) {
+            setTimeout(() => nextList.classList.toggle('active'), 100);
+        }
+        menuEl.inert = true;
+    });
+};
+
+const footerSectionAccordion = () => {
+    const companyMenu = document.getElementById('company-menu');
+    const contactMenu = document.getElementById('contact-menu');
+    const meetMenu = document.getElementById('meet-menu');
+
+    const companyOpenMenu = document.getElementById('company-open-menu');
+    const contactOpenMenu = document.getElementById('contact-open-menu');
+    const meetOpenMenu = document.getElementById('meet-open-menu');
+
+    const companyCloseMenu = document.getElementById('company-close-menu');
+    const contactCloseMenu = document.getElementById('contact-close-menu');
+    const meetCloseMenu = document.getElementById('meet-close-menu');
+
+    const contactList = document.getElementById('contact-list');
+    const meetList = document.getElementById('meet-list');
+
+    companyMenu.inert = true;
+    contactMenu.inert = true;
+    meetMenu.inert = true;
+
+    if (
+        !companyMenu ||
+        !contactMenu ||
+        !meetMenu ||
+        !companyOpenMenu ||
+        !contactOpenMenu ||
+        !meetOpenMenu ||
+        !companyCloseMenu ||
+        !contactCloseMenu ||
+        !meetCloseMenu ||
+        !contactList ||
+        !meetList
+    )
+        throw new Error('HTML content not loaded');
+
+    createAccordion(
+        companyMenu,
+        companyOpenMenu,
+        companyCloseMenu,
+        contactList,
+    );
+    createAccordion(contactMenu, contactOpenMenu, contactCloseMenu, meetList);
+    createAccordion(meetMenu, meetOpenMenu, meetCloseMenu, null);
+};
+
+footerSectionAccordion();

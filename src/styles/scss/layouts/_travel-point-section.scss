@@ -4,7 +4,7 @@
 
 .travel-point-section {
     width: 100%;
-    margin-top: 65px;
+    margin-top: 69px;
     @include flex-layout(column);
 
     &__content {
@@ -13,8 +13,8 @@
         gap: 18px;
         text-align: center;
 
-        & > p {
-            padding: 20px 10px 0 10px;
+        &__description {
+            padding: 15px 10px 0 10px;
         }
     }
 }
@@ -25,13 +25,14 @@
 
 @include media-up('md') {
     .travel-point-section {
-        margin-top: 131.8px;
+        margin-top: 140px;
+        gap: 5px;
 
         &__content {
             padding-top: 55px;
-            gap: 15px;
+            gap: 18px;
 
-            & > p {
+            &__description {
                 padding: 16px 35px 0 35px;
             }
         }
@@ -54,6 +55,7 @@
         margin-left: 0;
         margin-top: 125px;
         max-width: 1321px;
+        gap: 0;
 
         &__content {
             width: 450px;
@@ -62,7 +64,7 @@
             @include flex-layout(column, flex-start, flex-start);
             gap: 20px;
 
-            & > p {
+            &__description {
                 padding: 12px 15px 0 0;
             }
         }
@@ -77,6 +79,5 @@
         position: absolute;
         top: 250px;
         right: 10px;
-        z-index: -1;
     }
 }
