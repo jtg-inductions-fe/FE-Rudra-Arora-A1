@@ -3,10 +3,10 @@
 @use '../components/card';
 
 .features-section {
-    margin-top: 112px;
+    margin-top: 95px;
     @include flex-layout(column);
     text-align: center;
-    gap: 85px;
+    gap: 102px;
 
     &__content {
         height: 1127px;
@@ -28,8 +28,9 @@
 
 @include media-up('md') {
     .features-section {
-        margin-top: 134px;
-        gap: 47px;
+        margin-top: 135px;
+        height: 1768px;
+        gap: 66px;
 
         &__content {
             gap: 18px;

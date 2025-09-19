@@ -2,7 +2,7 @@
 @use '../abstracts/variables' as *;
 
 .newsletter-section {
-    padding-top: 915px;
+    padding-top: 172px;
     @include flex-layout(column, flex-start, center);
     text-align: center;
     gap: 33px;
@@ -72,7 +72,7 @@
         background-color: $form-section-bg;
         padding: 132px 0;
         border-radius: 20px;
-        margin-top: 515px;
+        margin-top: 100px;
 
         &__sub-title {
             padding: 0 70px;
@@ -116,7 +116,7 @@
 
 @include media-up('lg') {
     .newsletter-section {
-        margin-top: 770px;
+        margin-top: 160px;
 
         &__sub-title {
             padding: 0 160px;

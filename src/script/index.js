@@ -1,3 +1,4 @@
+import '@splidejs/splide/css';
 import '../styles/scss/main.scss';
 
 const sidebarStateManagement = () => {
@@ -109,3 +110,93 @@ const travelPointCardGenerator = () => {
 };
 
 travelPointCardGenerator();
+
+import Splide from '@splidejs/splide';
+
+new Splide('.splide', {
+    type: 'loop',
+}).mount();
+
+const footerSectionAccordion = () => {
+    const companyMenu = document.getElementById('company-menu');
+    const contactMenu = document.getElementById('contact-menu');
+    const meetMenu = document.getElementById('meet-menu');
+
+    const companyOpenMenu = document.getElementById('company-open-menu');
+    const contactOpenMenu = document.getElementById('contact-open-menu');
+    const meetOpenMenu = document.getElementById('meet-open-menu');
+
+    const companyCloseMenu = document.getElementById('company-close-menu');
+    const contactCloseMenu = document.getElementById('contact-close-menu');
+    const meetCloseMenu = document.getElementById('meet-close-menu');
+
+    const contactList = document.getElementById('contact-list');
+    const meetList = document.getElementById('meet-list');
+
+    companyMenu.inert = true;
+    contactMenu.inert = true;
+    meetMenu.inert = true;
+
+    if (
+        !companyMenu ||
+        !contactMenu ||
+        !meetMenu ||
+        !companyOpenMenu ||
+        !contactOpenMenu ||
+        !meetOpenMenu ||
+        !companyCloseMenu ||
+        !contactCloseMenu ||
+        !meetCloseMenu ||
+        !contactList ||
+        !meetList
+    )
+        throw new Error('HTML content not loaded');
+
+    companyOpenMenu.addEventListener('click', () => {
+        companyOpenMenu.toggleAttribute('hidden');
+        companyCloseMenu.toggleAttribute('hidden');
+        setTimeout(() => companyMenu.classList.toggle('active'), 150);
+        contactList.classList.toggle('active');
+        companyMenu.inert = false;
+    });
+
+    companyCloseMenu.addEventListener('click', () => {
+        companyOpenMenu.toggleAttribute('hidden');
+        companyCloseMenu.toggleAttribute('hidden');
+        companyMenu.classList.toggle('active');
+        setTimeout(() => contactList.classList.toggle('active'), 100);
+        companyMenu.inert = true;
+    });
+
+    contactOpenMenu.addEventListener('click', () => {
+        contactOpenMenu.toggleAttribute('hidden');
+        contactCloseMenu.toggleAttribute('hidden');
+        setTimeout(() => contactMenu.classList.toggle('active'), 150);
+        meetList.classList.toggle('active');
+        contactMenu.inert = false;
+    });
+
+    contactCloseMenu.addEventListener('click', () => {
+        contactOpenMenu.toggleAttribute('hidden');
+        contactCloseMenu.toggleAttribute('hidden');
+        contactMenu.classList.toggle('active');
+        setTimeout(() => meetList.classList.toggle('active'), 100);
+        contactMenu.inert = true;
+    });
+
+    meetOpenMenu.addEventListener('click', () => {
+        meetOpenMenu.toggleAttribute('hidden');
+        meetCloseMenu.toggleAttribute('hidden');
+        meetMenu.classList.toggle('active');
+        meetMenu.inert = false;
+    });
+
+    meetCloseMenu.addEventListener('click', () => {
+        meetOpenMenu.toggleAttribute('hidden');
+        meetCloseMenu.toggleAttribute('hidden');
+        meetMenu.classList.toggle('active');
+        meetMenu.inert = true;
+    });
+};
+
+footerSectionAccordion();

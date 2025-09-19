@@ -3,8 +3,8 @@
 
 .services-section__card {
     @include flex-layout(column, flex-start, center);
-    gap: 28px;
-    padding: 28px 16px;
+    gap: 25px;
+    padding: 33px 16px;
     border-radius: 30px;
     box-shadow: 1px 1px 7px 2px variables.$shadow-color;
 
