@@ -117,6 +117,31 @@ new Splide('.splide', {
     type: 'loop',
 }).mount();
 
+const createAccordion = (menuEl, openBtn, closeBtn, nextList) => {
+    if (!menuEl || !openBtn || !closeBtn) {
+        throw new Error('Accordion elements not found');
+    }
+    menuEl.inert = true;
+
+    openBtn.addEventListener('click', () => {
+        openBtn.toggleAttribute('hidden');
+        closeBtn.toggleAttribute('hidden');
+        setTimeout(() => menuEl.classList.toggle('active'), 150);
+        if (nextList) nextList.classList.toggle('active');
+        menuEl.inert = false;
+    });
+
+    closeBtn.addEventListener('click', () => {
+        openBtn.toggleAttribute('hidden');
+        closeBtn.toggleAttribute('hidden');
+        menuEl.classList.toggle('active');
+        if (nextList) {
+            setTimeout(() => nextList.classList.toggle('active'), 100);
+        }
+        menuEl.inert = true;
+    });
+};
+
 const footerSectionAccordion = () => {
     const companyMenu = document.getElementById('company-menu');
     const contactMenu = document.getElementById('contact-menu');
@@ -152,51 +177,14 @@ const footerSectionAccordion = () => {
     )
         throw new Error('HTML content not loaded');
 
-    companyOpenMenu.addEventListener('click', () => {
-        companyOpenMenu.toggleAttribute('hidden');
-        companyCloseMenu.toggleAttribute('hidden');
-        setTimeout(() => companyMenu.classList.toggle('active'), 150);
-        contactList.classList.toggle('active');
-        companyMenu.inert = false;
-    });
-
-    companyCloseMenu.addEventListener('click', () => {
-        companyOpenMenu.toggleAttribute('hidden');
-        companyCloseMenu.toggleAttribute('hidden');
-        companyMenu.classList.toggle('active');
-        setTimeout(() => contactList.classList.toggle('active'), 100);
-        companyMenu.inert = true;
-    });
-
-    contactOpenMenu.addEventListener('click', () => {
-        contactOpenMenu.toggleAttribute('hidden');
-        contactCloseMenu.toggleAttribute('hidden');
-        setTimeout(() => contactMenu.classList.toggle('active'), 150);
-        meetList.classList.toggle('active');
-        contactMenu.inert = false;
-    });
-
-    contactCloseMenu.addEventListener('click', () => {
-        contactOpenMenu.toggleAttribute('hidden');
-        contactCloseMenu.toggleAttribute('hidden');
-        contactMenu.classList.toggle('active');
-        setTimeout(() => meetList.classList.toggle('active'), 100);
-        contactMenu.inert = true;
-    });
-
-    meetOpenMenu.addEventListener('click', () => {
-        meetOpenMenu.toggleAttribute('hidden');
-        meetCloseMenu.toggleAttribute('hidden');
-        meetMenu.classList.toggle('active');
-        meetMenu.inert = false;
-    });
-
-    meetCloseMenu.addEventListener('click', () => {
-        meetOpenMenu.toggleAttribute('hidden');
-        meetCloseMenu.toggleAttribute('hidden');
-        meetMenu.classList.toggle('active');
-        meetMenu.inert = true;
-    });
+    createAccordion(
+        companyMenu,
+        companyOpenMenu,
+        companyCloseMenu,
+        contactList,
+    );
+    createAccordion(contactMenu, contactOpenMenu, contactCloseMenu, meetList);
+    createAccordion(meetMenu, meetOpenMenu, meetCloseMenu, null);
 };
 
 footerSectionAccordion();

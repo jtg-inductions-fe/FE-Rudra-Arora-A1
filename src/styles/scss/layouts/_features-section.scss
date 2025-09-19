@@ -9,7 +9,7 @@
     gap: 102px;
 
     &__content {
-        height: 1127px;
+        min-height: 1127px;
         @include flex-layout(column);
         gap: 15px;
 
@@ -29,7 +29,7 @@
 @include media-up('md') {
     .features-section {
         margin-top: 135px;
-        height: 1768px;
+        min-height: 1768px;
         gap: 66px;
 
         &__content {
@@ -46,7 +46,7 @@
 
 @include media-up('lg') {
     .features-section {
-        height: 869px;
+        min-height: 869px;
         margin-top: 125px;
         @include flex-layout(row-reverse);
         gap: 60px;

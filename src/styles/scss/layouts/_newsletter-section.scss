@@ -22,42 +22,42 @@
         position: relative;
         @include flex-layout(column, flex-start, stretch);
         gap: 30px;
+    }
 
-        &__icon {
-            font-size: 20px;
-            position: absolute;
-            top: 55px;
-            left: 33px;
+    &__icon {
+        font-size: 20px;
+        position: absolute;
+        top: 55px;
+        left: 33px;
+    }
+
+    &__email-input {
+        padding-left: 70px;
+        height: 72px;
+        border: none;
+        border-radius: 15px;
+        font-size: 1.4rem;
+
+        &::placeholder {
+            font-size: 14px;
+            font-weight: 700;
+            color: $text-black-75;
         }
 
-        &__email-input {
-            padding-left: 70px;
-            height: 72px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.4rem;
-
-            &::placeholder {
-                font-size: 14px;
-                font-weight: 700;
-                color: $text-black-75;
-            }
-
-            &:focus-visible {
-                outline: 3px solid $secondary-color;
-                outline-offset: 3px;
-            }
+        &:focus-visible {
+            outline: 3px solid $secondary-color;
+            outline-offset: 3px;
         }
+    }
 
-        &--submit-button {
-            padding: 25px 0;
-            border-radius: 15px;
-            font-size: 1rem;
+    &__submit-button {
+        padding: 25px 0;
+        border-radius: 15px;
+        font-size: 1rem;
 
-            &:focus-visible {
-                outline: 3px solid $secondary-color;
-                outline-offset: 3px;
-            }
+        &:focus-visible {
+            outline: 3px solid $secondary-color;
+            outline-offset: 3px;
         }
     }
 
@@ -81,28 +81,28 @@
         &__form {
             width: 769px;
             @include flex-layout(row, center, stretch);
+        }
 
-            &__icon {
-                font-size: 26px;
-                top: 65px;
+        &__icon {
+            font-size: 26px;
+            top: 65px;
+        }
+
+        &__email-input {
+            width: 502px;
+            height: 96px;
+            padding-left: 78px;
+
+            &::placeholder {
+                font-size: 23px;
             }
+        }
 
-            &__email-input {
-                width: 502px;
-                height: 96px;
-                padding-left: 78px;
-
-                &::placeholder {
-                    font-size: 23px;
-                }
-            }
-
-            &--submit-button {
-                border-radius: 35px;
-                width: 235px;
-                padding: 40px 0;
-                font-size: 1.43rem;
-            }
+        &__submit-button {
+            border-radius: 35px;
+            width: 235px;
+            padding: 40px 0;
+            font-size: 1.43rem;
         }
 
         &__graphic {
@@ -127,19 +127,19 @@
         &__form {
             width: 1065px;
             gap: 80px;
+        }
 
-            &__icon {
-                left: 40px;
-            }
+        &__icon {
+            left: 40px;
+        }
 
-            &__email-input {
-                padding-left: 85px;
-                width: 766px;
-            }
+        &__email-input {
+            padding-left: 85px;
+            width: 766px;
+        }
 
-            &--submit-button {
-                width: 235px;
-            }
+        &__submit-button {
+            width: 235px;
         }
 
         &__graphic {
