@@ -4,7 +4,7 @@
 
 .travel-point-section {
     width: 100%;
-    margin-top: 69px;
+    margin-top: 65px;
     @include flex-layout(column);
 
     &__content {
@@ -17,6 +17,18 @@
             padding: 15px 10px 0 10px;
         }
     }
+
+    &__main-img {
+        pointer-events: none;
+    }
+
+    &__cards-container {
+        width: 100%;
+        @include flex-layout(column);
+        padding-top: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
 }
 
 .travel-point-section-object {
@@ -25,7 +37,7 @@
 
 @include media-up('md') {
     .travel-point-section {
-        margin-top: 140px;
+        margin-top: 124px;
         gap: 5px;
 
         &__content {
@@ -40,6 +52,14 @@
         &__tablet-desktop-image {
             padding-left: 31.5px;
         }
+
+        &__cards-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 832px;
+            gap: 30px;
+            padding-top: 40px;
+        }
     }
 }
 
@@ -53,7 +73,7 @@
     .travel-point-section {
         @include flex-layout(row, flex-start, stretch);
         margin-left: 0;
-        margin-top: 125px;
+        margin-top: 130px;
         max-width: 1321px;
         gap: 0;
 
@@ -72,12 +92,19 @@
         &__tablet-desktop-image {
             padding: 0;
         }
+
+        &__cards-container {
+            width: 450px;
+            gap: 30px;
+            padding-top: 45px;
+        }
     }
 
     .travel-point-section-object {
         display: block;
         position: absolute;
-        top: 250px;
-        right: 10px;
+        top: 275px;
+        right: 55px;
+        z-index: 1;
     }
 }

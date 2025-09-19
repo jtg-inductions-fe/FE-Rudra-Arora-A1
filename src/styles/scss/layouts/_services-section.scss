@@ -17,6 +17,7 @@
         @include flex-layout(column);
         gap: 18px;
         padding-top: 2px;
+        flex-wrap: wrap;
     }
 }
 
