@@ -3,8 +3,8 @@
 
 .services-section__card {
     @include flex-layout(column, flex-start, center);
-    gap: 28px;
-    padding: 34px 16px;
+    gap: 25px;
+    padding: 33px 16px;
     border-radius: 30px;
     box-shadow: 1px 1px 7px 2px variables.$shadow-color;
 
@@ -37,7 +37,7 @@
         flex: 1;
 
         & > div {
-            margin-top: 22px;
+            margin-top: 25px;
             margin-bottom: 32px;
         }
 
@@ -48,7 +48,7 @@
 
         &__title {
             font-size: 1.8rem;
-            padding: 7px 40px;
+            padding: 0 40px;
             text-align: center;
         }
     }
@@ -91,7 +91,7 @@
     @include flex-layout(column, center, stretch);
     gap: 20px;
 
-    & > h4 {
+    & > h3 {
         color: variables.$tertiary-color;
         font-weight: bold;
         font-size: 2.18rem;
@@ -119,7 +119,7 @@
         flex-wrap: wrap;
         width: 832px;
         gap: 30px;
-        padding-top: 57px;
+        padding-top: 40px;
     }
 
     .travel-point-section__card {
@@ -138,5 +138,68 @@
     .travel-point-section__card {
         text-align: center;
         width: 209.29px;
+    }
+}
+
+.features-section__card {
+    width: 334px;
+    height: 290px;
+    padding-left: 32px;
+    @include flex-layout(column);
+    padding-top: 32px;
+    border-radius: 30px;
+
+    & > span {
+        font-size: 100px;
+    }
+
+    &__description {
+        margin-top: 10px;
+        padding-right: 34px;
+    }
+
+    &__title {
+        margin-top: 33px;
+        font-size: 1.43rem;
+        line-height: 1.7rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+        transition: transform 0.3s ease-in;
+        box-shadow: 1px 1px 3px 2px variables.$shadow-color;
+    }
+
+    &:focus-visible {
+        outline: 3px solid variables.$secondary-color;
+        outline-offset: 3px;
+    }
+}
+
+@include media-up('md') {
+    .features-section__card {
+        width: 832px;
+        height: 164px;
+        padding-top: 0;
+        padding-left: 62px;
+        @include flex-layout(row, flex-start, center);
+        gap: 34px;
+
+        &__title {
+            margin: 0;
+        }
+
+        & > div {
+            @include flex-layout(column, center, stretch);
+        }
+    }
+}
+
+@include media-up('lg') {
+    .features-section__card {
+        width: 559px;
+        height: 164px;
+        padding-left: 30px;
     }
 }
