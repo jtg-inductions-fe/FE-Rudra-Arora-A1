@@ -41,6 +41,7 @@
         "*.{html,scss,json}": "prettier --check"
     },
     "dependencies": {
-        "@splidejs/splide": "^4.1.4"
+        "@splidejs/splide": "^4.1.4",
+        "wicg-inert": "^3.1.3"
     }
 }

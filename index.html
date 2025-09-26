@@ -2,126 +2,130 @@
 <html lang="en">
     <head>
         <title>Travel.co - Explore</title>
-        <title>Travel.co - Explore</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="A travel booking web app" />
+        <link rel="stylesheet" href="./src/styles/scss/main.scss" />
     </head>
     <body>
-        <header class="gradient">
-            <nav class="nav-parent">
-                <div class="container navbar">
-                    <a class="navbar__mainLogo" aria-label="Homepage" href="/">
-                        <img
-                            src="./src/assets/images/logo.png"
-                            alt="main logo"
-                        />
-                    </a>
+        <div
+            id="loader"
+            class="loader-wrapper"
+            role="status"
+            aria-live="polite"
+            aria-label="Loading"
+        >
+            <div class="loader"></div>
+        </div>
 
-                    <div class="navbar__menuIcons">
-                        <button
-                            class="icon-ham-menu navbar__menuIcons--openMenu buttonReset"
-                            id="hamburger"
-                            type="button"
-                            aria-label="Open menu"
-                            aria-controls="menu"
-                            aria-expanded="false"
-                            tabindex="0"
-                        ></button>
-                        <button
-                            class="icon-cross navbar__menuIcons--crossMenu buttonReset"
-                            id="cross"
-                            type="button"
-                            aria-label="Close menu"
-                            aria-controls="menu"
-                            aria-expanded="true"
-                            hidden
-                        ></button>
-                    </div>
+        <header id="navbar">
+            <div class="container navbar">
+                <a class="navbar__mainLogo" aria-label="Homepage" href="/">
+                    <img src="./src/assets/images/logo.png" alt="main logo" />
+                </a>
 
-                    <section
-                        class="navbar__menu"
-                        id="menu"
-                        aria-label="Primary Links"
-                    >
-                        <ul class="navbar__links-list">
-                            <li class="navbar__link">
-                                <a href="#home">Home</a>
-                            </li>
-                            <li class="navbar__link">
-                                <a href="#discover">Discover</a>
-                            </li>
-                            <li class="navbar__link">
-                                <a href="#deals">Special Deals</a>
-                            </li>
-                            <li class="navbar__link">
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section
-                        class="navbar__desktopmenu"
-                        id="desktopmenu"
-                        aria-label="Primary Links"
-                    >
-                        <ul class="navbar__desktoplinks-list">
-                            <li class="navbar__desktoplink">
-                                <a href="#home">Home</a>
-                            </li>
-                            <li class="navbar__desktoplink">
-                                <a href="#discover">Discover</a>
-                            </li>
-                            <li class="navbar__desktoplink">
-                                <a href="#deals">Special Deals</a>
-                            </li>
-                            <li class="navbar__desktoplink">
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <div class="navbar__button-group" id="navButtonMobile">
-                        <button
-                            class="navbar__loginButton button button--secondary"
-                            type="button"
-                            aria-label="Log in"
-                        >
-                            Log In
-                        </button>
-                        <button
-                            class="navbar__signupButton button button--primary"
-                            type="button"
-                            aria-label="Sign up"
-                        >
-                            Sign Up
-                        </button>
-                    </div>
-
-                    <div
-                        class="navbar__desktop-tabletbutton-group"
-                        id="navButton"
-                    >
-                        <button
-                            class="navbar__desktop-tabletloginButton button button--secondary"
-                            type="button"
-                            aria-label="Log in"
-                        >
-                            Log In
-                        </button>
-                        <button
-                            class="navbar__desktop-tabletsignupButton button button--primary"
-                            type="button"
-                            aria-label="Sign up"
-                        >
-                            Sign Up
-                        </button>
-                    </div>
+                <div class="navbar__menuIcons">
+                    <button
+                        class="icon-ham-menu navbar__menuIcons--openMenu buttonReset"
+                        id="hamburger"
+                        type="button"
+                        aria-label="Open menu"
+                        aria-controls="menu"
+                        aria-expanded="false"
+                        tabindex="0"
+                    ></button>
+                    <button
+                        class="icon-cross navbar__menuIcons--crossMenu buttonReset"
+                        id="cross"
+                        type="button"
+                        aria-label="Close menu"
+                        aria-controls="menu"
+                        aria-expanded="true"
+                        hidden
+                    ></button>
                 </div>
-            </nav>
+
+                <section
+                    class="navbar__menu"
+                    id="menu"
+                    aria-label="Primary Links"
+                >
+                    <ul class="navbar__links-list">
+                        <li class="navbar__link">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="navbar__link">
+                            <a href="#discover">Discover</a>
+                        </li>
+                        <li class="navbar__link">
+                            <a href="#deals">Special Deals</a>
+                        </li>
+                        <li class="navbar__link">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section
+                    class="navbar__desktopmenu"
+                    id="desktopmenu"
+                    aria-label="Primary Links"
+                >
+                    <ul class="navbar__desktoplinks-list">
+                        <li class="navbar__desktoplink">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="navbar__desktoplink">
+                            <a href="#discover">Discover</a>
+                        </li>
+                        <li class="navbar__desktoplink">
+                            <a href="#deals">Special Deals</a>
+                        </li>
+                        <li class="navbar__desktoplink">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="navbar__button-group" id="navButtonMobile">
+                    <button
+                        class="navbar__loginButton button button--secondary"
+                        type="button"
+                        aria-label="Log in"
+                    >
+                        Log In
+                    </button>
+                    <button
+                        class="navbar__signupButton button button--primary"
+                        type="button"
+                        aria-label="Sign up"
+                    >
+                        Sign Up
+                    </button>
+                </div>
+
+                <div class="navbar__desktop-tabletbutton-group" id="navButton">
+                    <button
+                        class="navbar__desktop-tabletloginButton button button--secondary"
+                        type="button"
+                        aria-label="Log in"
+                    >
+                        Log In
+                    </button>
+                    <button
+                        class="navbar__desktop-tabletsignupButton button button--primary"
+                        type="button"
+                        aria-label="Sign up"
+                    >
+                        Sign Up
+                    </button>
+                </div>
+            </div>
         </header>
 
-        <main class="main-section">
-            <section class="container hero-section">
+        <main class="main-section" id="mainSection">
+            <section class="container hero-section" id="hero">
+                <div class="hero-gradient"></div>
                 <div class="hero-section__image" aria-hidden="true">
                     <picture>
                         <source
@@ -139,33 +143,33 @@
                     <button
                         class="button button--icon-center hero-section__button"
                     >
-                        Explore the World!
+                        Explore the world!
                         <i
                             class="icon-work-bag button--icon-secondary"
                             aria-hidden="true"
                         ></i>
                     </button>
 
-                    <h1 class="heading hero-section__heading">
+                    <h1 class="hero-section__heading">
                         Travel <span>top destination</span> of the world
                     </h1>
 
-                    <p class="para">
+                    <p>
                         We always make our customer happy by providing as many
                         choices as possible
                     </p>
 
                     <div
-                        class="hero-section__button-grp"
+                        class="hero-section__button-group"
                         aria-label="Startup Actions"
                     >
                         <button
-                            class="button button--primary hero-section__button-grp--get-started"
+                            class="button button--primary hero-section__button-group--get-started"
                         >
                             Get Started
                         </button>
                         <button
-                            class="button button--text button--icon-center hero-section__button-grp--watch-demo"
+                            class="button button--text button--icon-center hero-section__button-group--watch-demo"
                         >
                             <i
                                 class="icon-play-circle button--icon-primary"
@@ -184,50 +188,109 @@
             </section>
 
             <div
-                class="container hero-section__logos"
+                class="container hero-section__logo-wrapper"
                 aria-label="Trusted by Leading Companies"
             >
-                <a class="hero-section__partner-logo" href="/">
-                    <img
-                        src="./src/assets/images/trip-ad-logo.png"
-                        alt="tripAdvisorLogo"
-                        loading="lazy"
-                    />
-                </a>
-                <a class="hero-section__partner-logo" href="/">
-                    <img
-                        src="./src/assets/images/expedia-logo.png"
-                        alt="expediaLogo"
-                        loading="lazy"
-                    />
-                </a>
-                <a class="hero-section__partner-logo" href="/">
-                    <img
-                        src="./src/assets/images/booking-logo.png"
-                        alt="bookingLogo"
-                        loading="lazy"
-                    />
-                </a>
-                <a class="hero-section__partner-logo" href="/">
-                    <img
-                        src="./src/assets/images/airbnb-logo.png"
-                        alt="airbnbLogo"
-                        loading="lazy"
-                    />
-                </a>
-                <a class="hero-section__partner-logo" href="/">
-                    <img
-                        src="./src/assets/images/gabitz-logo.png"
-                        alt="orbitzLogo"
-                        loading="lazy"
-                    />
-                </a>
+                <div class="marquee-logo-track">
+                    <a class="hero-section__partner-logo" href="#tripAdvisor">
+                        <img
+                            src="./src/assets/images/trip-ad-logo.png"
+                            alt="tripAdvisorLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a class="hero-section__partner-logo" href="#expedia">
+                        <img
+                            src="./src/assets/images/expedia-logo.png"
+                            alt="expediaLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a class="hero-section__partner-logo" href="#booking">
+                        <img
+                            src="./src/assets/images/booking-logo.png"
+                            alt="bookingLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a class="hero-section__partner-logo" href="#airBnb">
+                        <img
+                            src="./src/assets/images/airbnb-logo.png"
+                            alt="airbnbLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a class="hero-section__partner-logo" href="#orbitz">
+                        <img
+                            src="./src/assets/images/gabitz-logo.png"
+                            alt="orbitzLogo"
+                            loading="lazy"
+                        />
+                    </a>
+
+                    <a
+                        class="hero-section__partner-logo"
+                        href="#tripAdvisor"
+                        aria-hidden="true"
+                    >
+                        <img
+                            src="./src/assets/images/trip-ad-logo.png"
+                            alt="tripAdvisorLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a
+                        class="hero-section__partner-logo"
+                        href="#expedia"
+                        aria-hidden="true"
+                    >
+                        <img
+                            src="./src/assets/images/expedia-logo.png"
+                            alt="expediaLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a
+                        class="hero-section__partner-logo"
+                        href="#booking"
+                        aria-hidden="true"
+                    >
+                        <img
+                            src="./src/assets/images/booking-logo.png"
+                            alt="bookingLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a
+                        class="hero-section__partner-logo"
+                        href="#airBnb"
+                        aria-hidden="true"
+                    >
+                        <img
+                            src="./src/assets/images/airbnb-logo.png"
+                            alt="airbnbLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                    <a
+                        class="hero-section__partner-logo"
+                        href="#orbitz"
+                        aria-hidden="true"
+                    >
+                        <img
+                            src="./src/assets/images/gabitz-logo.png"
+                            alt="orbitzLogo"
+                            loading="lazy"
+                        />
+                    </a>
+                </div>
             </div>
 
             <section class="container services-section">
+                <div class="services-gradient"></div>
                 <div class="services-section__content">
-                    <p class="preset-1">SERVICES</p>
-                    <h2 class="subHeading">Our top value categories for you</h2>
+                    <h2>SERVICES</h2>
+                    <h3>Our top value categories for you</h3>
                 </div>
 
                 <div
@@ -244,13 +307,17 @@
                                 alt="destination"
                             />
                         </div>
-                        <h3 class="services-section__card__title">
-                            Best Tour Guide
-                        </h3>
-                        <p class="services-section__card__description">
-                            What looked like a small patch of purple grass,
-                            above five feet.
-                        </p>
+                        <div class="services-section__card__content">
+                            <h4 class="services-section__card__title">
+                                Best Tour Guide
+                            </h4>
+                            <p
+                                class="card-text services-section__card__description"
+                            >
+                                What looked like a small patch of purple grass,
+                                above five feet.
+                            </p>
+                        </div>
                     </div>
 
                     <div
@@ -263,13 +330,17 @@
                                 alt="booking"
                             />
                         </div>
-                        <h3 class="services-section__card__title">
-                            Easy Booking
-                        </h3>
-                        <p class="services-section__card__description">
-                            Square, was moving across the sand in their
-                            direction.
-                        </p>
+                        <div class="services-section__card__content">
+                            <h4 class="services-section__card__title">
+                                Easy Booking
+                            </h4>
+                            <p
+                                class="card-text services-section__card__description"
+                            >
+                                Square, was moving across the sand in their
+                                direction.
+                            </p>
+                        </div>
                     </div>
 
                     <div
@@ -282,13 +353,17 @@
                                 alt="weather"
                             />
                         </div>
-                        <h3 class="services-section__card__title">
-                            Weather Forecast
-                        </h3>
-                        <p class="services-section__card__description">
-                            What looked like a small patch of purple grass,
-                            above five feet.
-                        </p>
+                        <div class="services-section__card__content">
+                            <h4 class="services-section__card__title">
+                                Weather Forecast
+                            </h4>
+                            <p
+                                class="card-text services-section__card__description"
+                            >
+                                What looked like a small patch of purple grass,
+                                above five feet.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -312,13 +387,9 @@
                     </div>
 
                     <div class="travel-point-section__content">
-                        <p class="preset-1">TRAVEL POINT</p>
-                        <h2 class="subHeading">
-                            We helping you find your dream location
-                        </h2>
-                        <p
-                            class="travel-point-section__content__description para"
-                        >
+                        <h2>TRAVEL POINT</h2>
+                        <h3>We helping you find your dream location</h3>
+                        <p class="travel-point-section__content__description">
                             Contrary to popular belief, Lorem Ipsum is not
                             simply random text. It has roots in a piece of
                             classical Latin literature from 45 BC.
@@ -361,9 +432,9 @@
                 </div>
 
                 <div class="features-section__content">
-                    <p class="preset-1">KEY FEATURES</p>
-                    <h2 class="subHeading">We offer best services</h2>
-                    <p class="features-section__content__description para">
+                    <h2>KEY FEATURES</h2>
+                    <h3>We offer best services</h3>
+                    <p class="features-section__content__description">
                         Contrary to popular belief, Lorem Ipsum is not simply
                         random text. It has roots in a piece of classical Latin
                         literature from 45 BC.
@@ -376,10 +447,10 @@
                                 ><span class="path2"></span
                             ></span>
 
-                            <div>
-                                <h3 class="features-section__card__title">
+                            <div class="features-section__card__content">
+                                <h4 class="features-section__card__title">
                                     We offer best services
-                                </h3>
+                                </h4>
                                 <p
                                     class="card-text features-section__card__description"
                                 >
@@ -394,10 +465,10 @@
                                 ><span class="path2"></span
                             ></span>
 
-                            <div>
-                                <h3 class="features-section__card__title">
+                            <div class="features-section__card__content">
+                                <h4 class="features-section__card__title">
                                     Schedule your trip
-                                </h3>
+                                </h4>
                                 <p
                                     class="card-text features-section__card__description"
                                 >
@@ -412,10 +483,10 @@
                                 ><span class="path2"></span
                             ></span>
 
-                            <div>
-                                <h3 class="features-section__card__title">
+                            <div class="features-section__card__content">
+                                <h4 class="features-section__card__title">
                                     Get discounted coupons
-                                </h3>
+                                </h4>
                                 <p
                                     class="card-text features-section__card__description"
                                 >
@@ -433,184 +504,208 @@
                     alt="testimonial-bg"
                     class="testimonial-container__bg"
                 />
-                <img
-                    src="./src/assets/images/feat-testi-object.png"
-                    alt="feature-testimonial-graphic"
-                    class="testimonial-container__graphic"
-                />
                 <section class="container testimonial-section">
-                    <p class="preset-1">TESTIMONIALS</p>
-                    <h2 class="subHeading">Trust our clients</h2>
+                    <h2>TESTIMONIALS</h2>
+                    <h3>Trust our clients</h3>
 
-                    <section class="splide">
-                        <div style="position: relative">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li class="splide__slide">
+                    <section class="splide" id="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img
+                                        src="./src/assets/images/testimonial-card-img.png"
+                                        alt="testimonial-card-img"
+                                        loading="lazy"
+                                    />
+                                    <div class="splide__slide__content">
+                                        <span class="splide__slide__title"
+                                            >Mark Smith</span
+                                        >
+                                        <span class="splide__slide__subtitle">
+                                            / Travel Enthusiast</span
+                                        >
+                                    </div>
+                                    <div class="splide__slide__star">
                                         <img
-                                            src="./src/assets/images/testimonial-card-img.png"
-                                            alt="testimonial-card-img"
-                                            loading="lazy"
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
                                         />
-                                        <div class="splide__slide__content">
-                                            <span class="splide__slide__title"
-                                                >Mark Smith</span
-                                            >
-                                            <span
-                                                class="splide__slide__subtitle"
-                                            >
-                                                / Travel Enthusiast</span
-                                            >
-                                        </div>
-                                        <div class="splide__slide__star">
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                        </div>
-                                        <p class="splide__slide__description">
-                                            Contrary to popular belief, Lorem
-                                            Ipsum is not simply random text. It
-                                            has roots in a piece of classical
-                                            Latin literature from 45 BC.
-                                        </p>
-                                    </li>
-
-                                    <li class="splide__slide">
                                         <img
-                                            src="./src/assets/images/testimonial-card-img.png"
-                                            alt="testimonial-card-img"
-                                            loading="lazy"
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
                                         />
-                                        <div class="splide__slide__content">
-                                            <span class="splide__slide__title"
-                                                >Mark Smith</span
-                                            >
-                                            <span
-                                                class="splide__slide__subtitle"
-                                            >
-                                                / Travel Enthusiast</span
-                                            >
-                                        </div>
-                                        <div class="splide__slide__star">
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                        </div>
-                                        <p class="splide__slide__description">
-                                            Contrary to popular belief, Lorem
-                                            Ipsum is not simply random text. It
-                                            has roots in a piece of classical
-                                            Latin literature from 45 BC.
-                                        </p>
-                                    </li>
-
-                                    <li class="splide__slide">
                                         <img
-                                            src="./src/assets/images/testimonial-card-img.png"
-                                            alt="testimonial-card-img"
-                                            loading="lazy"
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
                                         />
-                                        <div class="splide__slide__content">
-                                            <span class="splide__slide__title"
-                                                >Mark Smith</span
-                                            >
-                                            <span
-                                                class="splide__slide__subtitle"
-                                            >
-                                                / Travel Enthusiast</span
-                                            >
-                                        </div>
-                                        <div class="splide__slide__star">
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                            <img
-                                                src="./src/assets/images/testimonial-star.png"
-                                                alt="testimonial-star"
-                                            />
-                                        </div>
-                                        <p class="splide__slide__description">
-                                            Contrary to popular belief, Lorem
-                                            Ipsum is not simply random text. It
-                                            has roots in a piece of classical
-                                            Latin literature from 45 BC.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                    </div>
+                                    <p
+                                        class="splide__slide__description testimonial-card-description"
+                                    >
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </p>
+                                </li>
 
-                            <div class="splide__arrows"></div>
+                                <li class="splide__slide">
+                                    <img
+                                        src="./src/assets/images/testimonial-card-img.png"
+                                        alt="testimonial-card-img"
+                                        loading="lazy"
+                                    />
+                                    <div class="splide__slide__content">
+                                        <span class="splide__slide__title"
+                                            >Mark Smith</span
+                                        >
+                                        <span class="splide__slide__subtitle">
+                                            / Travel Enthusiast</span
+                                        >
+                                    </div>
+                                    <div class="splide__slide__star">
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                    </div>
+                                    <p
+                                        class="splide__slide__description testimonial-card-description"
+                                    >
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </p>
+                                </li>
+
+                                <li class="splide__slide">
+                                    <img
+                                        src="./src/assets/images/testimonial-card-img.png"
+                                        alt="testimonial-card-img"
+                                        loading="lazy"
+                                    />
+                                    <div class="splide__slide__content">
+                                        <span class="splide__slide__title"
+                                            >Mark Smith</span
+                                        >
+                                        <span class="splide__slide__subtitle">
+                                            / Travel Enthusiast</span
+                                        >
+                                    </div>
+                                    <div class="splide__slide__star">
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                        <img
+                                            src="./src/assets/images/testimonial-star.png"
+                                            alt="testimonial-star"
+                                        />
+                                    </div>
+                                    <p
+                                        class="splide__slide__description testimonial-card-description"
+                                    >
+                                        Contrary to popular belief, Lorem Ipsum
+                                        is not simply random text. It has roots
+                                        in a piece of classical Latin literature
+                                        from 45 BC.
+                                    </p>
+                                </li>
+                            </ul>
                         </div>
+
+                        <div
+                            class="splide__arrows splide__arrows--ltr"
+                            id="splideArrows"
+                        >
+                            <button
+                                class="splide__arrow splide__arrow--prev"
+                                type="button"
+                                aria-label="Previous testimonial"
+                            >
+                                <i class="icon-Group-9237-1-converted"></i>
+                            </button>
+                            <button
+                                class="icon-button-next splide__arrow splide__arrow--next"
+                                type="button"
+                                aria-label="Next testimonial"
+                            >
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </button>
+                        </div>
+
+                        <ul
+                            class="splide__pagination"
+                            id="splidePagination"
+                        ></ul>
                     </section>
                 </section>
             </div>
 
             <section class="container newsletter-section">
-                <h4 class="preset-1 newsletter-section__title">
+                <h2 class="newsletter-section__title">
                     SUBSCRIBE TO OUR NEWSLETTER
-                </h4>
-                <h2 class="subHeading newsletter-section__sub-title">
-                    Prepare yourself & let’s explore the beauty of the world
                 </h2>
+                <h3 class="newsletter-section__sub-title">
+                    Prepare yourself & let’s explore the beauty of the world
+                </h3>
 
-                <form action="" class="newsletter-section__form">
+                <form action="" class="newsletter-section__form" id="form">
                     <i class="icon-mail-icon newsletter-section__icon"></i>
+                    <div
+                        class="newsletter-input-group"
+                        id="newsletter-input-group"
+                    >
+                        <input
+                            type="email"
+                            name="email"
+                            class="newsletter-section__email-input"
+                            id="email"
+                            placeholder="Your Email"
+                        />
+                    </div>
                     <input
-                        type="email"
-                        name="email"
-                        class="newsletter-section__email-input"
-                        placeholder="Your Email"
-                    />
-                    <input
-                        type="submit"
+                        type="button"
                         value="Subscribe"
+                        id="submit"
                         class="button button--primary newsletter-section__submit-button"
                     />
                 </form>
@@ -625,18 +720,25 @@
             </section>
         </main>
 
-        <footer class="container footer-section">
+        <footer class="container footer-section" id="footer">
+            <div class="footer-section__graphic">
+                <img
+                    src="./src/assets/images/feat-testi-object.png"
+                    alt="feature-testimonial-graphic"
+                />
+            </div>
             <div class="footer-section__head-content">
                 <div class="footer-section__head-content__title-logo">
-                    <img
-                        src="./src/assets/images/logo.png"
-                        alt="footer travlog logo"
-                        class="footer-section__head-content__logo"
-                    />
-                    <h2 class="footer-section__head-content__title">Travlog</h2>
+                    <a class="footer-section__head-content__logo" href="/">
+                        <img
+                            src="./src/assets/images/logo.png"
+                            alt="footer travlog logo"
+                        />
+                    </a>
+                    <h3 class="footer-section__head-content__title">Travlog</h3>
                 </div>
 
-                <p class="para footer-section__head-content__description">
+                <p class="footer-section__head-content__description">
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
                     from 45 BC.
@@ -658,7 +760,7 @@
                     class="footer-section__foot-content__list"
                     id="company-list"
                 >
-                    <h3>Company</h3>
+                    <h4>Company</h4>
                     <button
                         class="buttonReset icon-circle-down"
                         id="company-open-menu"
@@ -676,9 +778,9 @@
                         hidden
                     ></button>
                     <ul id="company-menu">
-                        <li><a href="/">About</a></li>
-                        <li><a href="">Career</a></li>
-                        <li><a href="">Mobile</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#career">Career</a></li>
+                        <li><a href="#mobile">Mobile</a></li>
                     </ul>
                 </div>
 
@@ -686,7 +788,7 @@
                     class="footer-section__foot-content__list"
                     id="contact-list"
                 >
-                    <h3>Contact Us</h3>
+                    <h4>Contact Us</h4>
                     <button
                         class="buttonReset icon-circle-down"
                         id="contact-open-menu"
@@ -704,10 +806,10 @@
                         hidden
                     ></button>
                     <ul id="contact-menu">
-                        <li><a href="/">Why Travlog?</a></li>
-                        <li><a href="/">Partner with us</a></li>
-                        <li><a href="">FAQ`s</a></li>
-                        <li><a href="/">Blog</a></li>
+                        <li><a href="#whytravlog">Why Travlog?</a></li>
+                        <li><a href="#partner">Partner with us</a></li>
+                        <li><a href="#FAQ">FAQ`s</a></li>
+                        <li><a href="#blog">Blog</a></li>
                     </ul>
                 </div>
 
@@ -715,7 +817,7 @@
                     class="buttonReset footer-section__foot-content__list"
                     id="meet-list"
                 >
-                    <h3>Meet Us</h3>
+                    <h4>Meet Us</h4>
                     <button
                         class="buttonReset icon-circle-down"
                         id="meet-open-menu"
@@ -744,7 +846,9 @@
                             >
                         </li>
                         <li>
-                            <a href="">205. R Street, New York BD23200</a>
+                            <a href="#address"
+                                >205. R Street, New York BD23200</a
+                            >
                         </li>
                     </ul>
                 </div>
@@ -752,39 +856,49 @@
 
             <div class="footer-section__desktop-tablet-foot-content">
                 <div class="footer-section__desktop-tablet-foot-content__list">
-                    <h3>Company</h3>
+                    <h4>Company</h4>
                     <ul
                         class="footer-section__desktop-tablet-foot-content__links"
                     >
-                        <li><a href="/">About</a></li>
-                        <li><a href="">Career</a></li>
-                        <li><a href="">Mobile</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#career">Career</a></li>
+                        <li><a href="#mobile">Mobile</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section__desktop-tablet-foot-content__list">
-                    <h3>Contact</h3>
+                    <h4>Contact</h4>
                     <ul
                         class="footer-section__desktop-tablet-foot-content__links"
                     >
-                        <li><a href="/">Why Travlog?</a></li>
-                        <li><a href="/">Partner with us</a></li>
-                        <li><a href="">FAQ`s</a></li>
-                        <li><a href="/">Blog</a></li>
+                        <li><a href="#whytravlog">Why Travlog?</a></li>
+                        <li><a href="#partner">Partner with us</a></li>
+                        <li><a href="#FAQ">FAQ`s</a></li>
+                        <li><a href="#blog">Blog</a></li>
                     </ul>
                 </div>
 
                 <div
                     class="buttonReset footer-section__desktop-tablet-foot-content__list"
                 >
-                    <h3>Meet Us</h3>
+                    <h4>Meet Us</h4>
                     <ul
                         class="footer-section__desktop-tablet-foot-content__links"
                     >
-                        <li><a href="">+00 92 1234 56789</a></li>
-                        <li><a href="">info@travlog.com</a></li>
                         <li>
-                            <a href="">205. R Street, New York BD23200</a>
+                            <a href="tel:+00 92 1234 56789"
+                                >+00 92 1234 56789</a
+                            >
+                        </li>
+                        <li>
+                            <a href="mailto:info@travlog.com"
+                                >info@travlog.com</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#address"
+                                >205. R Street, New York BD23200</a
+                            >
                         </li>
                     </ul>
                 </div>

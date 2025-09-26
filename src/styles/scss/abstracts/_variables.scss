@@ -2,27 +2,34 @@ $primary-color: #5d50c6;
 $secondary-color: #f85e9f;
 $tertiary-color: #ff5722;
 
-$background-color-white: white;
+$shadow-color: #eeeeee;
+$shadow-black-10: #1918251a;
+$shadow-card: #0000001a;
 
-$text-color-1: #92888a;
-$text-color-2: white;
+$border-black-10: #1918251a;
 
-$shadow-color: #f2eff0;
+$text-black: #191825;
+$text-black-75: #191825bf;
+$text-black-50: #19182580;
+$text-hover: #222831;
 
-$text-black: black;
-$text-black-75: #191825;
-
-$background-accent-1: #ffd9cd;
-$background-accent-2: #fef5db;
+$background-accent-1: #ffdbd0;
+$background-accent-2: #fef5da;
 
 $background-transparent: transparent;
-$form-section-bg: #fffbf1;
+$form-section-bg: #facd4914;
 
 $black: black;
 $white: white;
+
+$sidebar-color: #ffd9cd;
 
 $breakpoints: (
     'sm': 430px,
     'md': 1024px,
     'lg': 1440px,
 );
+
+$error-text: red;
+
+$error-bg: #ffcccb;

@@ -5,10 +5,6 @@
     display: none;
 }
 
-.testimonial-container__graphic {
-    display: none;
-}
-
 .testimonial-section {
     margin-top: 70px;
     @include flex-layout(column, flex-start, center);
@@ -17,7 +13,7 @@
 
 .splide {
     width: 100%;
-    padding-top: 48px;
+    margin-top: 48px;
     z-index: 1;
 }
 
@@ -25,16 +21,24 @@
     @include flex-layout(column, flex-start, center);
 
     & > p {
-        padding: 70px 10px 100px 10px;
+        max-width: 376px;
+        margin: 70px 0 100px 0;
         text-align: center;
         font-weight: 400;
         font-size: 1.12rem;
         line-height: 1.72rem;
         color: $text-black-75;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 100%;
     }
 
     &__content {
-        padding-top: 62px;
+        margin-top: 62px;
     }
 
     &__title {
@@ -52,7 +56,7 @@
     &__star {
         @include flex-layout(row, center, center);
         gap: 20px;
-        padding-top: 33px;
+        margin-top: 33px;
     }
 }
 
@@ -60,22 +64,30 @@
     position: absolute;
     right: 0;
     left: 0;
-    margin-top: 74px;
+    margin-top: 72px;
 
     .splide__arrow {
         width: 64px;
         height: 64px;
+        margin: 0;
+    }
+
+    .splide__arrow:focus-visible {
+        outline: 3px solid $secondary-color !important;
+        outline-offset: 4px;
     }
 
     .splide__arrow--next {
+        font-size: 4rem;
         right: 0;
         background: $primary-color;
         box-shadow: 1px 1px 3px 3px $shadow-color;
     }
 
     .splide__arrow--prev {
+        font-size: 4rem;
         left: 0;
-        background: $background-color-white;
+        background: $white;
         box-shadow: 1px 1px 3px 3px $shadow-color;
     }
 }
@@ -91,6 +103,11 @@
         &.is-active {
             background-color: $secondary-color;
         }
+
+        &:focus-visible {
+            outline: 3px solid $secondary-color !important;
+            outline-offset: 4px;
+        }
     }
 }
 
@@ -104,33 +121,28 @@
             display: block;
             max-width: 1024px;
             position: absolute;
-            top: -150px;
-        }
-
-        &__graphic {
-            display: block;
-            position: absolute;
-            bottom: -145px;
-            right: 7px;
+            top: -100px;
+            left: 0px;
         }
     }
 
     .testimonial-section {
-        margin-top: 38px;
+        margin-top: 130px;
     }
 
     .splide {
-        padding-top: 41px;
+        margin-top: 41px;
     }
 
     .splide__slide {
         &__content {
-            padding-top: 54px;
+            margin-top: 54px;
         }
 
         & > p {
             font-size: 1.43rem;
-            padding: 62px 140px 92px 140px;
+            max-width: 584px;
+            margin: 62px 0 92px 0;
             line-height: 36px;
         }
     }
@@ -152,24 +164,26 @@
         position: relative;
         max-width: 1440px;
         margin: auto;
+        height: 600px;
 
         &__bg {
+            height: 150%;
+            width: 100%;
             max-width: 1440px;
-            top: -270px;
-        }
-
-        &__graphic {
-            bottom: -1010px;
+            top: -100px;
+            height: 700px;
         }
     }
 
     .testimonial-section {
-        margin-top: 70px;
+        margin-top: 73px;
     }
 
     .splide__slide {
         & > p {
-            padding: 62px 190px 92px 190px;
+            max-width: 810px;
+            margin: 67px 0 92px 0;
+            -webkit-line-clamp: 2;
         }
     }
 

@@ -1,4 +1,4 @@
-@use '../abstracts/variables';
+@use '../abstracts/variables' as *;
 @use '../abstracts/fonts';
 @use '../abstracts/mixins' as *;
 
@@ -11,32 +11,49 @@
     font-size: 0.87rem;
     line-height: 1.05rem;
     background-color: white;
+    transform: scale(1);
+    transition: transform 0.2s linear;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     &--icon-center {
         @include flex-center();
     }
 
     &--icon-primary {
-        color: variables.$primary-color;
+        color: $primary-color;
         font-size: 1.5rem;
     }
 
     &--icon-secondary {
-        color: variables.$secondary-color;
+        color: $secondary-color;
         font-size: 1.5rem;
     }
 
     &--text {
-        background-color: variables.$background-color-white;
+        background-color: $white;
     }
 
     &--primary {
-        background-color: variables.$primary-color;
-        color: variables.$text-color-2;
+        background-color: $primary-color;
+        color: $white;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $secondary-color;
+        outline-offset: 3px;
     }
 }
 
 .buttonReset {
-    background: variables.$background-transparent;
+    background: $background-transparent;
     border: none;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid $secondary-color;
+        outline-offset: 2px;
+    }
 }

@@ -1,36 +1,51 @@
-@use '../abstracts/variables';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
-.gradient {
-    position: relative;
-    width: 100%;
+.hero-gradient {
+    position: absolute;
+    width: 420px;
+    height: 400px;
+    background: $background-accent-1;
+    filter: blur(85px);
+    border-radius: 50%;
+    top: -150px;
+    left: -100px;
+    z-index: -200;
 
-    &::before {
-        content: '';
-        overflow-x: hidden;
-        position: absolute;
-        pointer-events: none;
-        background: radial-gradient(
-            circle,
-            variables.$background-accent-1 30%,
-            variables.$background-color-white 70%
-        );
+    @include media-up('md') {
+        width: 642px;
+        height: 552px;
+        left: -200px;
+        top: -280px;
+    }
+
+    @include media-up('lg') {
+        width: 700px;
+        height: 700px;
+        left: -340px;
+        top: -220px;
+        filter: blur(70px);
+    }
+}
+
+.services-gradient {
+    display: none;
+    position: absolute;
+
+    @include media-up('md') {
+        display: block;
+        width: 500px;
+        height: 700px;
         border-radius: 50%;
-        width: 80vw;
-        height: 80vw;
-        z-index: -200;
+        background: $background-accent-2;
+        top: -300px;
+        right: -400px;
+        filter: blur(85px);
+    }
 
-        top: -20vw;
-        left: -20vw;
-        @media (width >= 1024px) {
-            top: -35vw;
-            left: -30vw;
-        }
-
-        @media (width >= 1440px) {
-            width: 60vw;
-            height: 60vw;
-            top: -20vw;
-            left: -20vw;
-        }
+    @include media-up('lg') {
+        left: unset;
+        top: -250px;
+        right: -450px;
     }
 }

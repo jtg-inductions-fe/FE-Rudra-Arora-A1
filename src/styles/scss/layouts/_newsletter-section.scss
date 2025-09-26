@@ -1,40 +1,49 @@
 @use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
 
+.input-error {
+    background-color: $error-bg;
+    border: 2px solid $error-text !important;
+}
+
+.email-error-msg {
+    color: $error-text;
+    font-size: 1rem;
+    margin-top: 4px;
+}
+
 .newsletter-section {
-    padding-top: 172px;
+    margin-top: 175px;
     @include flex-layout(column, flex-start, center);
     text-align: center;
+    padding: 0 32px;
     gap: 33px;
 
-    &__title {
-        padding: 0 30px;
-    }
-
     &__sub-title {
-        padding: 0 40px;
+        padding: 0 1px;
     }
 
     &__form {
         width: 334px;
-
-        padding-top: 30px;
+        height: 171px;
+        margin-top: 28px;
         position: relative;
         @include flex-layout(column, flex-start, stretch);
-        gap: 30px;
+        gap: 32px;
     }
 
     &__icon {
         font-size: 20px;
         position: absolute;
-        top: 55px;
+        top: 28px;
         left: 33px;
     }
 
     &__email-input {
+        width: 334px;
         padding-left: 70px;
         height: 72px;
-        border: none;
+        border: 1px solid $border-black-10;
         border-radius: 15px;
         font-size: 1.4rem;
 
@@ -52,7 +61,7 @@
 
     &__submit-button {
         padding: 25px 0;
-        border-radius: 15px;
+        border-radius: 16px;
         font-size: 1rem;
 
         &:focus-visible {
@@ -70,25 +79,28 @@
     .newsletter-section {
         position: relative;
         background-color: $form-section-bg;
-        padding: 132px 0;
-        border-radius: 20px;
-        margin-top: 100px;
+        padding: 128px 64px;
+        border-radius: 35px;
+        margin-top: 104px;
 
         &__sub-title {
-            padding: 0 70px;
+            max-width: 757px;
         }
 
         &__form {
             width: 769px;
+            height: 96px;
             @include flex-layout(row, center, stretch);
+            margin-top: 31px;
         }
 
         &__icon {
             font-size: 26px;
-            top: 65px;
+            top: 35px;
         }
 
         &__email-input {
+            border: none;
             width: 502px;
             height: 96px;
             padding-left: 78px;
@@ -99,7 +111,7 @@
         }
 
         &__submit-button {
-            border-radius: 35px;
+            border-radius: 30px;
             width: 235px;
             padding: 40px 0;
             font-size: 1.43rem;
@@ -116,25 +128,28 @@
 
 @include media-up('lg') {
     .newsletter-section {
-        margin-top: 160px;
+        margin-top: 220px;
+        padding-bottom: 122px;
 
         &__sub-title {
-            padding: 0 160px;
+            max-width: 1034px;
             font-size: 3.43rem;
             line-height: 4.12rem;
         }
 
         &__form {
+            margin-top: 33px;
             width: 1065px;
-            gap: 80px;
+            gap: 60px;
         }
 
         &__icon {
-            left: 40px;
+            left: 32px;
+            top: 35px;
         }
 
         &__email-input {
-            padding-left: 85px;
+            padding-left: 78px;
             width: 766px;
         }
 
@@ -143,7 +158,8 @@
         }
 
         &__graphic {
-            top: -45px;
+            opacity: 0.1;
+            top: -40px;
             left: -35px;
         }
     }

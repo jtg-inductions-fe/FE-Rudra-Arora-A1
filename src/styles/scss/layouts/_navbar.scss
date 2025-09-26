@@ -3,23 +3,28 @@
 @use '../components/gradient';
 @use '../abstracts/mixins';
 
-.nav-parent {
-    box-shadow: 0 1px 6px gray;
+header {
     min-height: 113px;
-    background: variables.$background-color-white;
-    display: flex;
-    align-items: center;
+    background: variables.$background-transparent;
+    box-shadow: none;
+    @include mixins.flex-layout(row, flex-start, center);
     width: 100vw;
     position: fixed;
     top: 0;
     z-index: 100;
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.scrolled {
+    background: variables.$white;
+    box-shadow: 0px 1px 6px variables.$shadow-color;
 }
 
 .navbar {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.flex-layout(row, space-between, center);
 
     &__desktopmenu {
         display: none;
@@ -27,17 +32,13 @@
 
     &__menu {
         position: fixed;
-        margin-top: 0;
         top: 0;
         right: 0;
         width: 100vw;
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include mixins.flex-layout(column, flex-start, center);
         gap: 64px;
-        background-color: #ffd9cd;
-        padding-top: 144px;
+        background-color: variables.$sidebar-color;
         opacity: 0;
         visibility: hidden;
         transition:
@@ -52,49 +53,46 @@
 
     &__links-list {
         list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include mixins.flex-layout(column, flex-start, center);
         gap: 32px;
+        margin-top: 144px;
     }
 
     &__link {
         width: 40vw;
-        border-radius: 50px;
         text-align: center;
-        padding: 16px;
-        transition: background-color 0.5s ease-in-out;
-
-        &:hover {
-            cursor: pointer;
-            background-color: variables.$background-color-white;
-        }
 
         & > a {
-            color: variables.$text-color-1;
+            display: block;
+            color: variables.$text-black-50;
+            background: none;
+            border-radius: 50px;
+            width: 100%;
+            padding: 16px;
             font-weight: 700;
-            transition: color 0.6s ease-in-out;
+            transition:
+                color 0.2s ease-in-out,
+                background-color 0.2s ease-in-out;
 
             &:focus-visible {
-                outline: 2px solid variables.$black;
-                outline-offset: 8px;
+                outline: 2px solid variables.$secondary-color;
+                outline-offset: 2px;
             }
 
             &:hover {
-                color: variables.$text-black;
+                color: variables.$text-hover;
+                background-color: variables.$white;
             }
         }
     }
 
     &__button-group {
         text-align: center;
-        position: absolute;
+        position: fixed;
         top: 33rem;
         right: 0;
         width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include mixins.flex-layout(column, flex-start, center);
         gap: 16px;
         background-color: variables.$background-transparent;
         opacity: 0;
@@ -114,25 +112,25 @@
     }
 
     &__menuIcons {
-        height: 45px;
+        height: 40px;
         z-index: 2;
 
         &--openMenu {
-            font-size: 41px;
+            font-size: 40px;
             color: variables.$primary-color;
             cursor: pointer;
             &:focus-visible {
-                outline: 2px solid variables.$black;
+                outline: 2px solid variables.$secondary-color;
                 outline-offset: 2px;
             }
         }
 
         &--crossMenu {
-            font-size: 41px;
+            font-size: 40px;
             color: variables.$primary-color;
             cursor: pointer;
             &:focus-visible {
-                outline: 2px solid variables.$black;
+                outline: 2px solid variables.$secondary-color;
                 outline-offset: 2px;
             }
         }
@@ -140,9 +138,10 @@
 
     &__mainLogo {
         z-index: 5;
+        height: 40px;
 
         &:focus-visible {
-            outline: 2px solid variables.$black;
+            outline: 2px solid variables.$secondary-color;
             outline-offset: 2px;
         }
     }
@@ -150,19 +149,11 @@
     &__signupButton {
         padding: 16px;
         width: 7rem;
-
-        &:hover {
-            transform: scale(110%);
-        }
     }
 
     &__loginButton {
         padding: 16px;
         width: 7rem;
-
-        &:hover {
-            transform: scale(110%);
-        }
     }
 }
 
@@ -175,106 +166,64 @@
             display: none;
         }
 
-        &__menuIcons {
-            margin: 0;
-        }
-
         &__mainLogo {
-            position: fixed;
-            left: 48%;
-            margin: 0;
-            order: 2;
-        }
-
-        &__menu {
-            padding-top: 240px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         &__links-list {
+            margin-top: 240px;
             gap: 48px;
         }
 
         &__desktop-tabletbutton-group {
             display: block;
-            position: static;
-            width: auto;
-            flex-direction: row;
-            background-color: variables.$background-transparent;
-            order: 3;
-            transform: none;
-            transition: none;
-            padding: 0;
-            margin: 0;
-            gap: 0;
-            opacity: 1;
-            z-index: 4;
         }
 
         &__desktop-tabletsignupButton {
             width: 7rem;
             padding: 17.6px;
-            &:hover {
-                transform: none;
-            }
         }
         &__desktop-tabletloginButton {
             width: 7rem;
             padding: 17.6px;
 
             &:hover {
-                transform: none;
+                box-shadow: 1px 1px 5px 2px variables.$shadow-color;
+                transition: box-shadow 0.2s linear;
             }
         }
     }
 }
 
 @include mixins.media-up('lg') {
-    .nav-parent {
-        min-height: 111.85px;
-    }
     .navbar {
-        position: sticky;
-        top: 0;
-        justify-content: space-between;
-
         &__menu {
             display: none;
         }
 
         &__desktopmenu {
             display: block;
-            position: static;
-            height: auto;
-            width: auto;
-            padding: 0;
-            order: 3;
-            transform: none;
-            background: variables.$background-transparent;
-            opacity: 1;
-            transition: none;
         }
 
         &__desktoplinks-list {
             display: flex;
-            flex-direction: row;
             gap: 58px;
-            list-style-type: none;
             font-weight: 700;
         }
 
         &__desktoplink {
-            width: auto;
-
             & > a {
-                color: variables.$text-color-1;
+                color: variables.$text-black-50;
 
                 &:focus-visible {
-                    outline: 2px solid variables.$black;
+                    outline: 2px solid variables.$secondary-color;
                     outline-offset: 8px;
                 }
 
                 &:hover {
-                    color: variables.$text-black;
+                    color: variables.$text-hover;
                 }
             }
         }
@@ -285,15 +234,7 @@
 
         &__mainLogo {
             position: static;
-            margin: 0;
-        }
-
-        &__button-group {
-            margin: 0;
-            width: auto;
-            background-color: variables.$background-transparent;
-            gap: 0;
-            z-index: 4;
+            transform: none;
         }
     }
 }

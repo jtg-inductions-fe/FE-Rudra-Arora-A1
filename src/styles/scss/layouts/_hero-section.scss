@@ -3,17 +3,26 @@
 @use '../components/buttons';
 @use '../abstracts/mixins' as *;
 
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 .main-section {
-    margin-top: 110px;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-section {
+    position: relative;
     @include flex-layout(column);
-    padding-top: 35.2px;
+    margin-top: 145.2px;
     gap: 34px;
 
     &__image {
         height: 364.8px;
+        pointer-events: none;
     }
 
     &__content {
@@ -22,7 +31,13 @@
         text-align: center;
 
         & > p {
-            padding: 5px 16px;
+            max-width: 364px;
+            margin: 5px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
@@ -38,44 +53,66 @@
     }
 
     &__heading {
-        padding: 0 16px 5px 16px;
+        max-width: 340px;
+        margin-bottom: 5px;
 
         & > span {
             color: variables.$secondary-color;
         }
     }
 
-    &__button-grp {
+    &__button-group {
         width: 100%;
         @include flex-layout(column);
         gap: 28.8px;
-        padding-top: 17px;
+        margin-top: 17px;
 
         &--get-started {
             padding: 24px 0;
+            box-shadow: none;
+            transform: scale(1);
+            transition:
+                box-shadow 0.2s linear,
+                transform 0.2s linear;
 
             &:hover {
                 transform: scale(1.05);
+                box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.1);
             }
         }
 
         &--watch-demo {
             padding: 19.84px 0;
             gap: 11.2px;
-            box-shadow: 1px 1px 3px 2px variables.$shadow-color;
+            border: 1px solid variables.$shadow-color;
+            transform: scale(1);
+            transition:
+                box-shadow 0.2s linear,
+                transform 0.2s linear;
 
             &:hover {
                 transform: scale(1.05);
+                box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.1);
             }
         }
     }
 
-    &__logos {
-        flex-wrap: wrap;
-        @include flex-layout(row, center, stretch);
-        gap: 32px;
-        margin-top: 67.2px;
-        padding-right: 16px;
+    &__icon {
+        display: none;
+    }
+
+    &__logo-wrapper {
+        margin-top: 66px;
+
+        .marquee-logo-track {
+            flex-wrap: wrap;
+            @include flex-layout(row, center, stretch);
+            gap: 32px;
+
+            & > *:nth-last-child(-n + 5) {
+                display: none;
+            }
+        }
     }
 
     &__partner-logo {
@@ -87,35 +124,28 @@
         }
 
         &:focus-visible {
-            outline: 2px solid variables.$black;
+            outline: 2px solid variables.$secondary-color;
             outline-offset: 8px;
         }
-    }
-
-    &__icon {
-        display: none;
     }
 }
 
 @include media-up('md') {
-    .main-section {
-        margin-top: 140px;
-    }
-
     .hero-section {
-        gap: 55px;
+        position: relative;
+        gap: 50px;
         @include flex-layout(column, flex-start, center);
-        margin-top: 32px;
+        margin-top: 180px;
 
         &__image {
             height: 718.4px;
         }
 
         &__content {
-            gap: 40px;
+            gap: 36px;
 
             & > p {
-                padding: 0 240px;
+                max-width: 416px;
             }
         }
 
@@ -126,15 +156,13 @@
         }
 
         &__heading {
-            margin-right: 16px;
-            padding: 0 144px;
-            word-spacing: 6.4px;
+            max-width: 608px;
         }
 
-        &__button-grp {
+        &__button-group {
             @include flex-layout(row, center, stretch);
 
-            padding-top: 0;
+            margin-top: 0px;
             gap: 24px;
 
             &--get-started {
@@ -142,25 +170,28 @@
             }
 
             &--watch-demo {
-                padding: 16px 27.2px;
+                padding: 14px 27.2px;
             }
-        }
-
-        &__logos {
-            gap: 32px;
-            margin-top: 165px;
-            padding: 0 128px;
-        }
-
-        &__partner-logo {
-            height: 32px;
         }
 
         &__icon {
             display: block;
             position: absolute;
-            top: 1268.48px;
-            left: 36.8px;
+            top: 1085px;
+            left: -25px;
+        }
+
+        &__logo-wrapper {
+            margin-top: 165px;
+            @include flex-layout(row, center, stretch);
+
+            .marquee-logo-track {
+                max-width: 640px;
+            }
+        }
+
+        &__partner-logo {
+            height: 32px;
         }
     }
 }
@@ -168,26 +199,19 @@
 @include media-up('lg') {
     .hero-section {
         @include flex-layout(row-reverse, flex-start, center);
-
+        margin-top: 170px;
         gap: 16px;
 
         &__content {
-            margin: 0;
             @include flex-layout(column, flex-start, flex-start);
-
             gap: 38px;
-            height: 713px;
-            padding-top: 60px;
 
             & > h1 {
                 text-align: start;
-                padding: 0;
-                margin: 0;
             }
 
             & > p {
-                padding: 0;
-                padding-top: 20px;
+                margin-top: 20px;
                 text-align: start;
             }
 
@@ -195,25 +219,38 @@
                 padding: 18.4px 30.4px;
                 gap: 8px;
                 background: variables.$background-transparent;
+                box-shadow: 1px 1px 3px 2px #00000012;
             }
         }
 
-        &__button-grp {
+        &__button-group {
             @include flex-layout(row, flex-start, stretch);
-            margin-top: 30px;
+            margin-top: 18px;
         }
 
-        &__logos {
-            padding: 0;
-            order: 3;
-            margin-top: 112px;
-            @include flex-layout(row, space-between, stretch);
-            gap: 80px;
+        &__logo-wrapper {
+            display: block;
+            margin-top: 125px;
+            overflow: clip;
+
+            .marquee-logo-track {
+                max-width: unset;
+                @include flex-layout(row, flex-start, stretch);
+                padding-right: 0;
+                padding-left: 7.4rem;
+                gap: 7.4rem;
+                width: max-content;
+                animation: marquee 10s linear infinite;
+
+                & > *:nth-last-child(-n + 5) {
+                    display: block;
+                }
+            }
         }
 
         &__icon {
-            top: 832px;
-            left: 32px;
+            top: 670px;
+            left: -90px;
         }
     }
 }
