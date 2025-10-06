@@ -6,39 +6,56 @@
     margin-top: 95px;
     @include flex-layout(column);
     text-align: center;
-    gap: 102px;
+    gap: 100px;
 
     &__content {
         min-height: 1127px;
-        @include flex-layout(column);
+        @include flex-layout(column, flex-start, center);
         gap: 15px;
 
         &__description {
-            padding: 18px 40px 0 40px;
+            max-width: 316px;
+            margin-top: 18px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
     &__card-container {
-        @include flex-layout(column, flex-start, center);
-        text-align: start;
-        padding-top: 18px;
+        @include flex-layout(column, flex-start, flex-start);
+        margin-top: 20px;
         gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    &__image {
+        pointer-events: none;
     }
 }
 
 @include media-up('md') {
     .features-section {
-        margin-top: 135px;
-        min-height: 1768px;
+        margin-top: 125px;
         gap: 66px;
 
         &__content {
+            min-height: auto;
             gap: 18px;
+
+            &__description {
+                max-width: 800px;
+            }
         }
 
         &__card-container {
-            @include flex-layout(column, flex-start, stretch);
-            padding-top: 40px;
+            flex-wrap: nowrap;
+            width: 832px;
+            text-align: start;
+
+            margin-top: 42px;
             gap: 0;
         }
     }
@@ -46,8 +63,8 @@
 
 @include media-up('lg') {
     .features-section {
-        min-height: 869px;
-        margin-top: 125px;
+        height: 869px;
+        margin-top: 120px;
         @include flex-layout(row-reverse);
         gap: 60px;
 
@@ -57,12 +74,14 @@
             width: 558.58px;
 
             &__description {
-                padding: 16px 30px 0 0;
+                max-width: 484px;
+                margin-top: 16px;
             }
         }
 
         &__card-container {
-            padding-top: 75px;
+            margin-top: 44px;
+            width: 559px;
         }
     }
 }
